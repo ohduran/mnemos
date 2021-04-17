@@ -1,3 +1,99 @@
+@font-face {
+    font-family: "DelaGothicOne";
+    src: url("../fonts/Dela_Gothic_One/DelaGothicOne-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+
+/* Open Sans */
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* END Open Sans */
+
+
 @tailwind base;
+
+.font-family-primary {
+  font-family: 'OpenSans', sans-serif;
+}
+
+.font-family-secondary {
+    font-family: 'Dela Gothic One', cursive;
+}
+
+body{
+  @apply font-family-primary text-nord-6;
+}
 @tailwind components;
 @tailwind utilities;
