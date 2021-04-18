@@ -6,9 +6,9 @@ module.exports = {
       colors: {
         michelangelo: {
           blue: "#42819F",
-          brown: "#CBB396",
+          brown: "#555234",
           green: "#86AA7D",
-          yellow: "#555234",
+          yellow: "#CBB396",
           orange: "#4D280F",
           white: "#F4EEF3",
         },
