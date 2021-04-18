@@ -1,6 +1,6 @@
 import React from "react"
-import { BoatAnimated, Helm, Sailor } from "../icons"
-import * as flipcardStyles from "../styles/flipcard.module.css"
+import { Helm, Sailor } from "../icons"
+import { FlashCard } from "../organisms"
 
 export default function Home() {
   return (
@@ -34,34 +34,11 @@ export default function Home() {
               ¡Al abordaje!
             </h1>
             <p className="mt-5">This text will get everyone to sign up</p>
-            <div>
-              <div
-                className={`${flipcardStyles.cardContainer} mr-20`}
-                style={{
-                  perspective: "9009x",
-                }}
-              >
-                <div
-                  className={`${flipcardStyles.card} relative w-32 h-32 transition-all transform text-center`}
-                >
-                  <div
-                    className={`${flipcardStyles.front} absolute bg-michelangelo-green top-0 left-0 w-32 h-32 rounded-lg text-michelangelo-white shadow-xl flex items-center justify-center text-xl`}
-                    style={{
-                      backfaceVisibility: "hidden",
-                    }}
-                  >
-                    <span className="">¿Cuál es la capital de España?</span>
-                  </div>
-                  <div
-                    className={`${flipcardStyles.back} absolute bg-michelangelo-green top-0 left-0 w-32 h-32 rounded-lg text-michelangelo-orange shadow-xl flex items-center justify-center text-lg`}
-                    style={{
-                      backfaceVisibility: "hidden",
-                    }}
-                  >
-                    Madrid
-                  </div>
-                </div>
-              </div>
+            <div className="mt-5 p-5">
+              <FlashCard
+                frontText="¿Cuál es la capital de España?"
+                backText="Madrid"
+              />
             </div>
           </div>
           <Sailor
