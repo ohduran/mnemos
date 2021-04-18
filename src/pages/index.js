@@ -34,10 +34,12 @@ export default function Home() {
               ¡Al abordaje!
             </h1>
             <p className="mt-5">This text will get everyone to sign up</p>
-            <div className="mt-5 p-5">
+            <div className="mt-5 px-5">
               <FlashCard
-                frontText="¿Cuál es la capital de España?"
-                backText="Madrid"
+                sectionNumber="1"
+                sectionTitle="Nomenclatura"
+                frontText="¿Cómo se llaman a las partes posteriores de los costados?"
+                backText="Aletas"
               />
             </div>
           </div>
