@@ -1,3 +1,3 @@
-import FlashCard from "./FlashCard"
+import FlashCardSet from "../organisms/FlashCardSet"
 
-export { FlashCard }
+export { FlashCardSet }

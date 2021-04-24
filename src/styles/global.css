@@ -93,7 +93,7 @@
 }
 
 body{
-  @apply font-family-primary bg-michelangelo-white;
+  @apply font-family-primary bg-michelangelo-white text-nord-0;
 }
 @tailwind components;
 @tailwind utilities;
