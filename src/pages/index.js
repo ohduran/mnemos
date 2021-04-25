@@ -223,14 +223,14 @@ export default function Home() {
               name="mc-embedded-subscribe-form"
               className="validate"
               target="_blank"
-              novalidate
+              noValidate
             >
               <div id="mc_embed_signup_scroll">
                 <h2 className="mt-3 md:mt-5 text-xl sm:text-3xl text-center font-family-secondary font-semibold">
                   Apúntate y te escribiremos cuando esté todo listo
                 </h2>
                 <div className="mc-field-group mt-5 flex flex-col items-center">
-                  <label className="text-nord-3" for="EMAIL">
+                  <label className="text-nord-3" htmlFor="EMAIL">
                     Email
                   </label>
                   <input
@@ -259,13 +259,13 @@ export default function Home() {
                     position: "absolute",
                     left: "-5000px",
                   }}
-                  ariaHidden="true"
+                  aria-hidden="true"
                 >
                   <input
                     type="text"
                     name="b_3027b73fd81dbeb61ffe9b85c_1c7064dfbc"
-                    tabindex="-1"
-                    value=""
+                    tabIndex="-1"
+                    defaultValue=""
                   />
                 </div>
                 <div className="clear mt-3 md:mt-5 flex items-center">
