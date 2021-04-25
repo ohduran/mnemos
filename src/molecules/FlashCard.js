@@ -18,7 +18,7 @@ const FlashCardSide = ({
         isFront
           ? "from-gray-700 via-gray-800 to-gray-900 text-michelangelo-white"
           : "from-nord-12 via-nord-13 to-nord-14 text-gray-800"
-      }   w-64 h-96 rounded-2xl shadow-lg grid p-1 items-center justify-center`}
+      }   w-64 sm:w-72 h-96 rounded-2xl shadow-lg grid p-1 items-center justify-center`}
       style={{
         gridTemplateColumns: "1fr",
       }}
@@ -34,7 +34,7 @@ const FlashCardSide = ({
           <Helm className="h-6 w-6 mr-3 " />
         </div>
         {isFront ? (
-          <div className="row-start-2 self-center justify-self-center text-xl text-center">
+          <div className="row-start-2 self-center justify-self-center mx-1 text-xl text-center">
             {prompt}
           </div>
         ) : (
@@ -55,7 +55,11 @@ const FlashCardSide = ({
 
         {isFront ? (
           <div className="row-start-3 mb-1 ml-2 text-xs flex text-nord-3">
-            <span>Pulsa en la carta para ver la respuesta</span>
+            {sectionTitle ? (
+              <span>Pulsa en la carta para ver la respuesta</span>
+            ) : (
+              ""
+            )}
           </div>
         ) : (
           <div className="row-start-3 mb-5 flex justify-around">
@@ -145,12 +149,14 @@ const FlashCard = ({
   )
 }
 
-const FlashCardSetCompleteFlashCard = ({ className, children }) => {
+const FlashCardSetCompleteFlashCard = ({ className }) => {
   return (
     <div className={`${className ? className : ""}`}>
-      <FlashCardSide isFront={true} className="block cursor-none">
-        {children}
-      </FlashCardSide>
+      <FlashCardSide
+        isFront={true}
+        prompt="El repaso ha finalizado"
+        className="block cursor-none"
+      ></FlashCardSide>
     </div>
   )
 }

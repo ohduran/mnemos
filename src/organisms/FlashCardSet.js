@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { FlashCard, FlashCardSetCompleteFlashCard } from "../molecules"
 
-const FlashCardSet = ({ questions }) => {
+const FlashCardSet = ({ questions, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [listOfQuestions, setListOfQuestions] = useState(questions)
 
@@ -27,7 +27,7 @@ const FlashCardSet = ({ questions }) => {
   }
 
   return (
-    <div className="my-5 flex items-center justify-center">
+    <div className={`${className} flex items-center justify-center`}>
       {listOfQuestions.length > 0 ? (
         listOfQuestions.map((question, index) => (
           <FlashCard
@@ -45,7 +45,7 @@ const FlashCardSet = ({ questions }) => {
           />
         ))
       ) : (
-        <FlashCardSetCompleteFlashCard>Ya está!</FlashCardSetCompleteFlashCard>
+        <FlashCardSetCompleteFlashCard />
       )}
     </div>
   )
