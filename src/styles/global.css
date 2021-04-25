@@ -1,3 +1,115 @@
+@font-face {
+    font-family: "Orelega One";
+    src: url("../fonts/Orelega_One/OrelegaOne-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+
+/* Open Sans */
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* END Open Sans */
+
+
 @tailwind base;
+
+.font-family-primary {
+  font-family: 'OpenSans', sans-serif;
+}
+
+.font-family-secondary {
+    font-family: 'Orelega One', cursive;
+}
+
+body{
+  @apply font-family-primary bg-michelangelo-white text-nord-0;
+}
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+  @variants hover, focus {
+    .transform-style-preserve-3d{
+      transform-style: preserve-3d;
+    }
+    .backface-visibility-hidden{
+      backface-visibility: hidden;
+    }
+
+    .transform-rotate-y-180{
+      transform: rotateY(180deg)
+    }
+  }
+}
