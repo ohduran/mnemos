@@ -66,7 +66,7 @@ export default function Home() {
           </svg>
         </section>
 
-        <section className="-mt-1 min-h-screen bg-nord-10">
+        <section className="-mt-2 pt-2 min-h-screen bg-nord-10">
           <div
             className="grid w-11/12 lg:w-8/12 max-w-4xl mx-auto items-center"
             style={{
