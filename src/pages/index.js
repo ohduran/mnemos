@@ -1,9 +1,9 @@
 import React from "react"
 import { Helm, Sailor } from "../icons"
 import { FlashCardSet } from "../organisms"
+import { StaticImage } from "gatsby-plugin-image"
 
 import HeroImage from "../../static/marc-wieland-YFFPD62BXQY-unsplash.jpg"
-import people from "../../static/luke-bender-h_YjxPtkRHA-unsplash.jpg"
 
 export default function Home() {
   return (
@@ -194,9 +194,10 @@ export default function Home() {
         </section>
         <section>
           <div className="my-5 sm:my-7 items-center justify-center grid grid-cols-1">
-            <img
+            <StaticImage
               className="opacity-50 mix-blend-multiply col-start-1 row-start-1 z-0 h-64 w-screen object-cover"
-              src={people}
+              src="../../static/luke-bender-h_YjxPtkRHA-unsplash.jpg"
+              alt="Futuros patrones disfrutando de las vistas"
               style={{
                 borderRadius: "100%/0 0 75px 75px",
               }}
