@@ -18,7 +18,7 @@ const FlashCardSide = ({
         isFront
           ? "from-gray-700 via-gray-800 to-gray-900 text-michelangelo-white"
           : "from-nord-12 via-nord-13 to-nord-14 text-gray-800"
-      }   w-64 sm:w-72 h-96 rounded-2xl shadow-lg grid p-1 items-center justify-center`}
+      }   w-64 sm:w-72 md:w-80 h-96 rounded-2xl shadow-lg grid p-1 items-center justify-center`}
       style={{
         gridTemplateColumns: "1fr",
       }}

@@ -42,7 +42,7 @@ export default function Home() {
             backgroundColor: "#F4EEF3",
           }}
         >
-          <div className="w-11/12 max-w-4xl mx-auto">
+          <div className="w-11/12 lg:w-8/12 max-w-4xl mx-auto">
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-semibold font-family-secondary">
               Estudia el PER
               <br className="hidden lg:block" /> con viento de popa
@@ -68,7 +68,7 @@ export default function Home() {
 
         <section className="-mt-1 min-h-screen bg-nord-10">
           <div
-            className="grid w-11/12 lg:w-8/12 max-w-4xl max-w-4xl mx-auto items-center"
+            className="grid w-11/12 lg:w-8/12 max-w-4xl mx-auto items-center"
             style={{
               gridTemplateRows: "max-content 1fr",
               gridTemplateColumns: "max-content 1fr",
@@ -76,7 +76,7 @@ export default function Home() {
           >
             <Sailor
               primaryColor="#eceff4"
-              className="col-start-1 col-span-2 row-start-1 h-32 sm:h-36 md:h-40 lg:h-48 w-32 sm:w-36 md:w-40 lg:w-48 justify-self-center"
+              className="col-start-1 col-span-2 row-start-1 h-32 sm:h-36 md:h-40 lg:h-48 xl:h-56 w-32 sm:w-36 md:w-40 lg:w-48 xl:w-56 justify-self-center"
             />
             <div className="col-start-1 col-span-2 row-start-2 mt-5 p-1">
               <h3 className="text-xl sm:text-3xl md:text-4xl font-bold">
