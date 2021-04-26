@@ -43,7 +43,7 @@ export default function Home() {
         </svg>
       </section>
 
-      <section className="-mt-2 pt-2 min-h-screen bg-nord-10">
+      <section className="-mt-2 bg-nord-10">
         <div
           className="grid w-11/12 lg:w-8/12 max-w-4xl mx-auto items-center"
           style={{
@@ -161,6 +161,12 @@ export default function Home() {
                 sectionTitle: "Balizamiento",
               },
             ]}
+            completeSetMessage={
+              <>
+                <p>¡Perfecto!</p>
+                <p>¡Sigue leyendo!</p>
+              </>
+            }
           />
           <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
             A base de entrenamiento diario, ejercicios de dificultad progresiva
@@ -168,6 +174,124 @@ export default function Home() {
             esforzarse.
           </p>
         </div>
+      </section>
+      <section>
+        <article className="mt-5 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0">
+          <h3 className="mt-3 md:mt-5 text-xl sm:text-3xl font-bold">
+            ¿Cómo funciona?
+          </h3>
+          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            Hay 2 ideas muy simples detrás de Nemos: el{" "}
+            <span>recuerdo activo</span> y la <span>repetición espaciada</span>.
+          </p>
+          <h4 className="mt-3 md:mt-5 font-bold">Recuerdo activo</h4>
+          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            El recuerdo activo es el método de estudio que consiste en hacerte
+            preguntas a ti mismo y tratar de recordar la respuesta. Nada que ver
+            con lo que hacemos habitualmente para estudiar, que suele ser leer,
+            escuchar o ver videos repetidas veces sin pararnos a pensar en si
+            estamos recordando algo.
+          </p>
+          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            La ciencia ha demostrado hasta la saciedad que la manera tradicional
+            de estudiar <span className="font-semibold">no funciona</span>. Al
+            estudiar de esa forma, nos engañamos a nostros mismos, creyendo que
+            estamos aprendiendo mucho cuando en realidad estamos perdiendo el
+            tiempo.
+          </p>
+          <FlashCardSet
+            className="my-5 sm:my-7"
+            questions={[
+              {
+                prompt:
+                  "¿Cómo se llama el método de estudio que consiste en hacerse preguntas y tratar de recordar las respuestas?",
+                answer: "Recuerdo activo",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿A qué conclusión ha llegado la ciencia con respecto a la eficacia de leer el temario varias veces como método de estudio?",
+                answer: "A que no funciona.",
+                sectionTitle: "Introducción a Nemos",
+              },
+            ]}
+            completeSetMessage={
+              <>
+                <p>¡Perfecto!</p>
+                <p>¡Sigue leyendo!</p>
+              </>
+            }
+          />
+          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            ¿Por qué el recuerdo activo es una técnica útil? Los
+            neurocientíficos han llegado a dos importantes conclusiones:
+          </p>
+          <ol className="w-11/12 mx-auto list-decimal mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            <li className="">
+              Al intentar recordar algo,{" "}
+              <span className="font-semibold">reconsolidamos</span> el recuerdo,
+              aumentando la probabilidad de que lo recordemos en el futuro.
+            </li>
+            <li className="mt-5">
+              Al cometer un error, nos indica que esa parte del temario aún no
+              la hemos interiorizado.{" "}
+              <span className="font-semibold">Los errores son una brújula</span>{" "}
+              que nos dice dónde debemos dedicar más tiempo de estudio.
+            </li>
+          </ol>
+
+          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+            Todos los cursos de preparación para el PER incluyen tests, pero
+            ponen el enfoque en la pizarra y las clases. Con Nemos, ponemos a tu
+            disposición <span className="italic">flash cards</span> pensadas
+            especialmente en consolidar los conocimientos, no en evaluarlos. Con
+            los "exámenes de años anteriores", compruebas si lo has aprendido;
+            con las flash cards de Nemos,{" "}
+            <span className="font-semibold">estarás aprendiendo</span>.
+          </p>
+
+          <FlashCardSet
+            className="my-5 sm:my-7"
+            questions={[
+              {
+                prompt:
+                  "Al intentar recordar algo, ¿qué ocurre con ese recuerdo?",
+                answer: "Se reconsolida.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Cómo se llama el método de estudio que consiste en hacerse preguntas y tratar de recordar las respuestas?",
+                answer: "Recuerdo activo",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Por qué cometer errores no es algo malo con la técnica del recuerdo activo?",
+                answer: (
+                  <span>
+                    Porque los errores son una{" "}
+                    <span className="italic"> brújula</span>.
+                  </span>
+                ),
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué diferencia hay entre las flash cards de Nemos y las preguntas de 'exámenes de años anteriores' de otros cursos?",
+                answer:
+                  "Las flash cards buscan reconsolidar conceptos, y los exámenes anteriores verifican que ya los recuerdas.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué implica que un recuerdo se 'reconsolide' cuando tratamos de recordarlo?",
+                answer: "Que es más probable que lo recordemos en el futuro.",
+                sectionTitle: "Introducción a Nemos",
+              },
+            ]}
+          />
+        </article>
       </section>
       <section>
         <div className="my-5 sm:my-7 items-center justify-center grid grid-cols-1">

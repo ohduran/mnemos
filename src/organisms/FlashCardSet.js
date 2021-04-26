@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { FlashCard, FlashCardSetCompleteFlashCard } from "../molecules"
 
-const FlashCardSet = ({ questions, className }) => {
+const FlashCardSet = ({ questions, className, completeSetMessage }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [listOfQuestions, setListOfQuestions] = useState(questions)
 
@@ -45,7 +45,9 @@ const FlashCardSet = ({ questions, className }) => {
           />
         ))
       ) : (
-        <FlashCardSetCompleteFlashCard />
+        <FlashCardSetCompleteFlashCard>
+          {completeSetMessage ? completeSetMessage : "El repaso ha finalizado"}
+        </FlashCardSetCompleteFlashCard>
       )}
     </div>
   )
