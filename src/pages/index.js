@@ -186,8 +186,8 @@ export default function Home() {
                 },
                 {
                   prompt:
-                    "¿Qué clase de marca representan 2 luces rojas en periodos de 2 ocultaciones cortas y una larga?",
-                  answer: "Marcas de canal principal a estribor",
+                    "¿Qué clase de marca representa una luz roja en periodos de 2 ocultaciones cortas y una larga?",
+                  answer: "Canal principal a estribor",
                   sectionTitle: "Balizamiento",
                 },
               ]}
