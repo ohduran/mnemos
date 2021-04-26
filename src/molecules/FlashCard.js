@@ -14,6 +14,9 @@ const FlashCardSide = ({
   return (
     <div
       onClick={onClick}
+      onKeyDown={onClick}
+      role="button"
+      tabIndex={0}
       className={`${className} bg-gradient-to-tr ${
         isFront
           ? "from-gray-700 via-gray-800 to-gray-900 text-michelangelo-white"
@@ -27,11 +30,14 @@ const FlashCardSide = ({
         className="h-full w-full border border-michelangelo-blue rounded-xl grid"
         style={{ gridTemplateRows: "max-content 1fr max-content" }}
       >
-        <div className="row-start-1 pt-1 flex justify-between items-center">
-          <span className="text-xs ml-3 mt-1 font-normal text-left font-family-secondary">
+        <div className="row-start-1 pt-1 flex justify-between items-baseline">
+          <span className="text-xs ml-3 mt-1 text-left font-light font-family-primary tracking-tighter">
             {sectionTitle}
           </span>
-          <Helm className="h-6 w-6 mr-3 " />
+          <div className="flex items-center">
+            <span className="text-xs font-family-secondary">Nemos.es</span>
+            <Helm className="h-6 w-6 ml-1 mr-1" />
+          </div>
         </div>
         {isFront ? (
           <div className="row-start-2 self-center justify-self-center mx-1 text-xl text-center">
