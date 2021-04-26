@@ -16,6 +16,7 @@ const FlashCardSide = ({
       onClick={onClick}
       onKeyDown={onClick}
       role="button"
+      tabIndex={0}
       className={`${className} bg-gradient-to-tr ${
         isFront
           ? "from-gray-700 via-gray-800 to-gray-900 text-michelangelo-white"

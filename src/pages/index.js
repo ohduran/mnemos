@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Helm, Sailor } from "../icons"
+import { SEO } from "../molecules"
 import { FlashCardSet } from "../organisms"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -14,6 +15,11 @@ export default function Home() {
         gridTemplateRows: "max-content 1fr max-content",
       }}
     >
+      <SEO
+        title={"Home"}
+        description={"Estudia el PER con viento de popa"}
+        article={false}
+      />
       <nav
         className="col-start-1 col-span-3 grid items-center justify-between pt-2 px-2 pb-2 shadow-lg bg-nord-10"
         style={{
