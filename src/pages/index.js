@@ -3,10 +3,12 @@ import { Helm, Sailor } from "../icons"
 import { FlashCardSet } from "../organisms"
 import { DefaultLayout } from "../layouts"
 import { StaticImage } from "gatsby-plugin-image"
+import { graphql, Link } from "gatsby"
+import * as howItWorksStyles from "../styles/how-it-works.module.css"
 
 import HeroImage from "../../static/marc-wieland-YFFPD62BXQY-unsplash.jpg"
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <DefaultLayout>
       <section
@@ -25,10 +27,81 @@ export default function Home() {
             <br className="hidden lg:block" /> con viento de popa
           </h1>
           <p className="mt-5 text-lg sm:text-2xl lg:text-3xl leading-loose sm:leading-relaxed lg:leading-loose">
-            Aprende más rápido, memoriza y entiende mejor
-            <br className="hidden lg:block" /> todo lo que necesitas para
-            navegar en la mar con confianza.
+            El método de{" "}
+            <span className="font-family-secondary text-xl sm:text-3xl md:text-4xl">
+              flash cards
+            </span>{" "}
+            con el que aprenderás más rápido y por más tiempo todo lo que
+            necesitas para navegar en la mar con confianza.
           </p>
+          <div
+            className="w-11/12 lg:w-8/12 max-w-lg my-5 py-5 px-5 h-full rounded-2xl shadow-xl flex flex-col items-center justify-center bg-nord-9"
+            id="mc_embed_signup"
+          >
+            <form
+              action="https://gmail.us1.list-manage.com/subscribe/post?u=3027b73fd81dbeb61ffe9b85c&amp;id=1c7064dfbc"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+              noValidate
+            >
+              <div id="mc_embed_signup_scroll">
+                <h2 className="mt-3 md:mt-5 text-xl sm:text-3xl text-center font-family-secondary font-semibold">
+                  Apúntate y te escribiremos cuando esté todo listo
+                </h2>
+                <div className="mc-field-group mt-5 flex flex-col items-center">
+                  <label className="text-nord-3" htmlFor="EMAIL">
+                    Email
+                  </label>
+                  <input
+                    placeholder="tuemail@nemos.es"
+                    autoComplete="email"
+                    type="email"
+                    name="EMAIL"
+                    className="required email text-gray-400 text-sm py-1 px-3 rounded-xl shadow-md w-8/12 mx-auto mt-1"
+                    id="mce-EMAIL"
+                  />
+                </div>
+                <div id="mce-responses" className="clear">
+                  <div
+                    className="response"
+                    id="mce-error-response"
+                    style={{ display: "none" }}
+                  ></div>
+                  <div
+                    className="response"
+                    id="mce-success-response"
+                    style={{ display: "none" }}
+                  ></div>
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "-5000px",
+                  }}
+                  aria-hidden="true"
+                >
+                  <input
+                    type="text"
+                    name="b_3027b73fd81dbeb61ffe9b85c_1c7064dfbc"
+                    tabIndex="-1"
+                    defaultValue=""
+                  />
+                </div>
+                <div className="clear mt-3 md:mt-5 flex items-center">
+                  <input
+                    type="submit"
+                    value="¡Me apunto!"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
         <svg
           className="shadow"
@@ -124,7 +197,7 @@ export default function Home() {
             >
               <path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z" />
             </svg>
-            <p className="mt-3 md:mt-5">Más fácil y en menos tiempo</p>
+            <p className="mt-3 md:mt-5">Más rápido</p>
           </div>
         </div>
       </section>
@@ -136,68 +209,39 @@ export default function Home() {
             d="M0,0L60,37.3C120,75,240,149,360,186.7C480,224,600,224,720,213.3C840,203,960,181,1080,154.7C1200,128,1320,96,1380,80L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
           ></path>
         </svg>
-        <div className="mt-5 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0">
-          <h3 className="text-xl sm:text-3xl font-bold">
-            Tu cerebro es un músculo
-          </h3>
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+        <div className="mt-5 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0"></div>
+      </section>
+      <section>
+        <article
+          className={`mt-12 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0 ${howItWorksStyles.wrapper}`}
+        >
+          <h3>¿Cómo funciona?</h3>
+          <p>
             Los métodos tradicionales intentan "copiar y pegar" el temario en tu
             mente con clases y lecciones. Pero el cerebro no funciona como un
             ordenador, sino como un músculo.
           </p>
-          <FlashCardSet
-            className="my-5 sm:my-7"
-            questions={[
-              {
-                prompt:
-                  "¿Cómo se llama el plano vertical que divide el buque, de proa a popa, en dos mitades simétricas?",
-                answer: "Plano de crujía",
-                sectionTitle: "Nomenclatura",
-              },
-              {
-                prompt:
-                  "¿Qué clase de marca representa una luz roja en periodos de 2 ocultaciones cortas y una larga?",
-                answer: "Canal principal a estribor",
-                sectionTitle: "Balizamiento",
-              },
-            ]}
-            completeSetMessage={
-              <>
-                <p>¡Perfecto!</p>
-                <p>¡Sigue leyendo!</p>
-              </>
-            }
-          />
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+          <p>
             A base de entrenamiento diario, ejercicios de dificultad progresiva
             y repeticiones, tu mente procesa, integra y memoriza casi sin
-            esforzarse.
+            esforzarse. Nemos funciona gracias a dos conceptos muy simples: el
+            recuerdo activo y la repetición espaciada.
           </p>
-        </div>
-      </section>
-      <section>
-        <article className="mt-5 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0">
-          <h3 className="mt-3 md:mt-5 text-xl sm:text-3xl font-bold">
-            ¿Cómo funciona?
-          </h3>
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
-            Hay 2 ideas muy simples detrás de Nemos: el{" "}
-            <span>recuerdo activo</span> y la <span>repetición espaciada</span>.
+          <h4>Recuerdo activo</h4>
+          <p>
+            El recuerdo activo es el método de estudio que consiste en{" "}
+            <em>
+              hacerte preguntas y tratar de recordar la respuesta sin mirar
+            </em>
+            . Nada que ver con lo que hacemos habitualmente para estudiar, que
+            suele ser leer, escuchar o ver videos repetidas veces sin pararnos a
+            pensar en si estamos aprendiendo algo.
           </p>
-          <h4 className="mt-3 md:mt-5 font-bold">Recuerdo activo</h4>
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
-            El recuerdo activo es el método de estudio que consiste en hacerte
-            preguntas a ti mismo y tratar de recordar la respuesta. Nada que ver
-            con lo que hacemos habitualmente para estudiar, que suele ser leer,
-            escuchar o ver videos repetidas veces sin pararnos a pensar en si
-            estamos recordando algo.
-          </p>
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
-            La ciencia ha demostrado hasta la saciedad que la manera tradicional
-            de estudiar <span className="font-semibold">no funciona</span>. Al
-            estudiar de esa forma, nos engañamos a nostros mismos, creyendo que
-            estamos aprendiendo mucho cuando en realidad estamos perdiendo el
-            tiempo.
+          <p>
+            La ciencia ha demostrado hasta la saciedad que{" "}
+            <strong>la manera tradicional de estudiar no funciona</strong>. Al
+            hacer una lectura pasiva, nos engañamos a nostros mismos, creyendo
+            que nos cunde cuando en realidad estamos perdiendo el tiempo.
           </p>
           <FlashCardSet
             className="my-5 sm:my-7"
@@ -211,7 +255,7 @@ export default function Home() {
               {
                 prompt:
                   "¿A qué conclusión ha llegado la ciencia con respecto a la eficacia de leer el temario varias veces como método de estudio?",
-                answer: "A que no funciona.",
+                answer: "Que no funciona.",
                 sectionTitle: "Introducción a Nemos",
               },
             ]}
@@ -222,32 +266,31 @@ export default function Home() {
               </>
             }
           />
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+          <p>
             ¿Por qué el recuerdo activo es una técnica útil? Los
             neurocientíficos han llegado a dos importantes conclusiones:
           </p>
-          <ol className="w-11/12 mx-auto list-decimal mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+          <ol className="">
             <li className="">
-              Al intentar recordar algo,{" "}
-              <span className="font-semibold">reconsolidamos</span> el recuerdo,
-              aumentando la probabilidad de que lo recordemos en el futuro.
+              Al intentar recordar algo, <strong>reconsolidamos</strong> el
+              recuerdo, aumentando la probabilidad de que lo recordemos en el
+              futuro.
             </li>
-            <li className="mt-5">
+            <li>
               Al cometer un error, nos indica que esa parte del temario aún no
               la hemos interiorizado.{" "}
-              <span className="font-semibold">Los errores son una brújula</span>{" "}
-              que nos dice dónde debemos dedicar más tiempo de estudio.
+              <strong>Los errores son una brújula</strong> que nos dice dónde
+              debemos dedicar más tiempo de estudio.
             </li>
           </ol>
 
-          <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed">
+          <p>
             Todos los cursos de preparación para el PER incluyen tests, pero
             ponen el enfoque en la pizarra y las clases. Con Nemos, ponemos a tu
-            disposición <span className="italic">flash cards</span> pensadas
-            especialmente en consolidar los conocimientos, no en evaluarlos. Con
-            los "exámenes de años anteriores", compruebas si lo has aprendido;
-            con las flash cards de Nemos,{" "}
-            <span className="font-semibold">estarás aprendiendo</span>.
+            disposición <em>flash cards</em> pensadas especialmente en
+            consolidar los conocimientos, no en evaluarlos. Con los "exámenes de
+            años anteriores", compruebas si lo has aprendido; con las flash
+            cards de Nemos, <strong>estarás aprendiendo</strong>.
           </p>
 
           <FlashCardSet
@@ -280,7 +323,7 @@ export default function Home() {
                 prompt:
                   "¿Qué diferencia hay entre las flash cards de Nemos y las preguntas de 'exámenes de años anteriores' de otros cursos?",
                 answer:
-                  "Las flash cards buscan reconsolidar conceptos, y los exámenes anteriores verifican que ya los recuerdas.",
+                  "Las flash cards reconsolidan recuerdos, y los exámenes comprueban lo que sabes.",
                 sectionTitle: "Introducción a Nemos",
               },
               {
@@ -290,6 +333,232 @@ export default function Home() {
                 sectionTitle: "Introducción a Nemos",
               },
             ]}
+            completeSetMessage={
+              <>
+                <p>¿Ves qué fácil?</p>
+                <p>¡Sigue así!</p>
+              </>
+            }
+          />
+
+          <h4>Usar o Perder</h4>
+          <p>
+            Tu cerebro es un órgano eficiente: rápidamente borra la información
+            que no le parece útil. Por ejemplo, es posible que no recuerdes lo
+            que comiste el pasado sábado. En cambio, si ese día fuiste a un
+            restaurante increíble y te has pasado toda la semana hablando sin
+            parar sobre lo alucinante que fue, entonces tendrás un recuerdo
+            mucho más nítido.
+          </p>
+          <p>
+            Este protocolo de <em>usar o perder</em> es la manera en que
+            funciona tu cerebro. Si pasas una tarde entera memorizando los
+            nombres de las partes de un barco, y lo dejas a un lado para ponerte
+            con otra cosa durante una semana, para cuando llegue el momento de
+            examinarte habrás olvidado la gran mayoría. De hecho, algunos
+            estudios sugieren que olvidamos en torno al 75% de lo que aprendemos
+            al cabo de 48 horas.
+          </p>
+          <p>
+            Esto puede ser descorazonador, si no fuera por que la solución es
+            muy simple: repasar. Al volver a estudiar conceptos que hemos
+            aprendido hace poco, podemos aumentar la cantidad de conceptos que
+            recordamos de manera significativa.
+          </p>
+
+          <FlashCardSet
+            className="my-5 sm:my-7"
+            questions={[
+              {
+                prompt:
+                  "Si no repasamos, ¿cuánto tiempo tardamos en perder el 75% de lo que aprendemos?",
+                answer: "48 horas",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "Al intentar recordar algo, ¿qué ocurre con ese recuerdo?",
+                answer: "Se reconsolida.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué porcentaje de lo que aprendemos se olvida al cabo de 2 días?",
+                answer: "El 75%",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Por qué cometer errores no es algo malo con la técnica del recuerdo activo?",
+                answer: (
+                  <span>
+                    Porque los errores son una{" "}
+                    <span className="italic"> brújula</span>.
+                  </span>
+                ),
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt: (
+                  <span>
+                    Cuál es la solución para sobreponerse al protocolo de{" "}
+                    <em>usar o perder</em>?
+                  </span>
+                ),
+                answer: "Repasar",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué diferencia hay entre las flash cards de Nemos y las preguntas de 'exámenes de años anteriores' de otros cursos?",
+                answer:
+                  "Las flash cards reconsolidan recuerdos, y los exámenes comprueban lo que sabes.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué implica que un recuerdo se 'reconsolide' cuando tratamos de recordarlo?",
+                answer: "Que es más probable que lo recordemos en el futuro.",
+                sectionTitle: "Introducción a Nemos",
+              },
+            ]}
+            completeSetMessage={
+              <>
+                <p>¡Otro más!</p>
+                <p>¡Ahora la repetición espaciada!</p>
+              </>
+            }
+          />
+          <h4>Repetición espaciada</h4>
+          <p>
+            El único problema con los repasos es que, tradicionalmente, no han
+            sido nunca nada prácticos. Si te enfrentas a temarios muy densos,
+            repasar puede convertirse una especie de juegos malabares mentales.
+            Tanto si te dedicas a leer y releer libros de texto como a pasar a
+            toda velocidad por tu paquete de <em>flash cards</em>, hay un límite
+            en lo que podemos repasar en un día, y lo que no repasamos se nos va
+            olvidando.
+          </p>
+          <p>
+            Afortunadamente, los seres humanos olvidan de una manera predecible.
+            Si dibujásemos la evolución de la probabilidad de recordar una idea
+            con el tiempo, sería una curva que caería rápidamente al principio,
+            pero que luego se estabiliza, y que podemos <em>levantar</em> con el
+            repaso. Es algo que la ciencia conoce desde hace más de 200 años,
+            pero que sólo recientemente ha podido ponerse en práctica.
+          </p>
+          <div className="flex items-center justify-center">
+            <StaticImage
+              className="rounded-xl shadow-lg mt-3 md:mt-5"
+              src="../../static/forgetting-curve.png"
+              alt="Curva de olvido"
+            />
+          </div>
+          <p>
+            Repasa muy pronto, y estarás perdiendo el tiempo; repasa muy tarde y
+            habrás olvidado el temario y tendrás que aprenderlo otra vez.{" "}
+            <strong>
+              El momento óptimo para repasar es justo en el momento en que lo
+              vas a olvidar
+            </strong>
+            . Y ese momento es diferente para cada uno de nosotros, y para cada
+            concepto.
+          </p>
+          <p>
+            Utilizando un ordenador, es posible clasificar las{" "}
+            <em>flash cards</em> según el día en que han de repasarse, de tal
+            manera que las más fáciles se ven menos (ya están memorizadas), y
+            las más difíciles se ven con más frecuencia (necesitan más
+            dedicación). Esta manera de trabajar, optimizando el tiempo de
+            estudio, se conoce como <strong>repetición espaciada</strong>.
+          </p>
+          <FlashCardSet
+            className="my-5 sm:my-7"
+            questions={[
+              {
+                prompt: "¿Cuál es el momento óptimo para repasar algo?",
+                answer: "Cuando estás a punto de olvidarlo.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿A qué conclusión ha llegado la ciencia con respecto a la eficacia de leer el temario varias veces como método de estudio?",
+                answer: "Que no funciona.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué porcentaje de lo que aprendemos se olvida al cabo de 2 días?",
+                answer: "El 75%",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Cómo se llama el método de estudio que consiste en hacerse preguntas y tratar de recordar las respuestas?",
+                answer: "Recuerdo activo",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué implica que un recuerdo se 'reconsolide' cuando tratamos de recordarlo?",
+                answer: "Que es más probable que lo recordemos en el futuro.",
+                sectionTitle: "Introducción a Nemos",
+              },
+              {
+                prompt:
+                  "¿Qué nombre recibe la técnica de estudio que divide el temario según la facilidad que tiene el estudiante para recordarlo?",
+                answer: "Repetición espaciada.",
+                sectionTitle: "Introducción a Nemos",
+              },
+            ]}
+            completeSetMessage={
+              <>
+                <p>¡Perfecto!</p>
+                <p>¡Sigue leyendo!</p>
+              </>
+            }
+          />
+          <p>
+            Es frustrante lo rápido que olvidamos lo que leemos. Para según qué
+            cosas no es muy importante, pero cuando necesitamos memorizar
+            conceptos como los del PER, que pueden suponer la diferencia entre
+            un día fantástico en la mar o un embrollo, procesar, entender y
+            memorizar se vuelve vital.
+          </p>
+          <p>
+            La inmensa mayoría de cursos para <em>aprobar</em> el PER se centran
+            en el examen, y es habitual que al cabo de unos meses toda esa
+            información se haya olvidado. Información que es importante retener,
+            como qué hacer en una situación de vuelta encontrada, o qué hacer
+            cuando necesitas pedir ayuda.
+          </p>
+          <p>
+            Gracias al recuerdo activo y a la repetición espaciada, Nemos es el
+            programa perfecto para que aprobar el PER sea sólo el principio, y
+            que tengas la confianza de que, cuando navegas, estás bajo control.
+            La seguridad del patrón.
+          </p>
+          <FlashCardSet
+            className="my-5 sm:my-7"
+            questions={[
+              {
+                prompt:
+                  "¿Cuál es el único programa que utiliza el recuerdo activo y la repetición espaciada para estudiar el PER?",
+                answer: "Nemos",
+                sectionTitle: "Introducción a Nemos",
+              },
+            ]}
+            completeSetMessage={
+              <>
+                <p>¡Ya está!</p>
+                <Link
+                  className="text-nord-13 font-semibold hover:underline"
+                  to="/#registrate"
+                >
+                  ¿Te apuntas?
+                </Link>
+              </>
+            }
           />
         </article>
       </section>
@@ -336,7 +605,7 @@ export default function Home() {
                   Email
                 </label>
                 <input
-                  defaultValue=""
+                  placeholder="tuemail@nemos.es"
                   autoComplete="email"
                   type="email"
                   name="EMAIL"
@@ -386,3 +655,15 @@ export default function Home() {
     </DefaultLayout>
   )
 }
+
+export const pageQuery = graphql`
+  {
+    allMdx(filter: { slug: { eq: "how-it-works" } }) {
+      edges {
+        node {
+          body
+        }
+      }
+    }
+  }
+`

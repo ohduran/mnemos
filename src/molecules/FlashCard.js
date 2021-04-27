@@ -10,6 +10,7 @@ const FlashCardSide = ({
   isFront,
   tryAgain,
   good,
+  progress,
 }) => {
   return (
     <div
@@ -29,7 +30,7 @@ const FlashCardSide = ({
     >
       <div
         className="h-full w-full border border-michelangelo-blue rounded-xl grid"
-        style={{ gridTemplateRows: "max-content 1fr max-content" }}
+        style={{ gridTemplateRows: "max-content max-content 1fr max-content" }}
       >
         <div className="row-start-1 pt-1 flex justify-between items-baseline">
           <span className="text-xs ml-3 mt-1 text-left font-light font-family-primary tracking-tighter">
@@ -40,18 +41,32 @@ const FlashCardSide = ({
             <Helm className="h-6 w-6 ml-1 mr-1" />
           </div>
         </div>
+        {progress && isFront ? (
+          <div id="progress-bar" className={`row-start-2 h-1 mt-1 mx-1`}>
+            <div
+              id="filler"
+              className="bg-nord-14 h-full rounded-tr-lg"
+              style={{
+                width: `${progress}%`,
+              }}
+            ></div>
+          </div>
+        ) : (
+          ""
+        )}
+
         {isFront ? (
-          <div className="row-start-2 self-center justify-self-center mx-1 text-xl text-center">
+          <div className="row-start-3 self-center justify-self-center mx-1 text-xl text-center">
             {prompt}
           </div>
         ) : (
           <div
-            className="row-start-2 grid p-3"
+            className="row-start-3 grid p-3"
             style={{
               gridTemplateRows: "max-content 1fr",
             }}
           >
-            <h3 className="mt-5 text-sm font-semibold justify-self-start self-start">
+            <h3 className="mt-5 mx-2 text-sm font-semibold justify-self-start self-start">
               {prompt}
             </h3>
             <h2 className="mt-5 text-3xl text-center justify-self-center self-center">
@@ -61,7 +76,7 @@ const FlashCardSide = ({
         )}
 
         {isFront ? (
-          <div className="row-start-3 mb-1 ml-2 text-xs flex text-nord-3">
+          <div className="row-start-4 mb-1 ml-2 text-xs flex text-nord-3">
             {sectionTitle ? (
               <span>Pulsa en la carta para ver la respuesta</span>
             ) : (
@@ -69,7 +84,7 @@ const FlashCardSide = ({
             )}
           </div>
         ) : (
-          <div className="row-start-3 mb-5 flex justify-around">
+          <div className="row-start-4 mb-5 flex justify-around">
             <button onClick={tryAgain}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,6 +127,7 @@ const FlashCard = ({
   answer,
   tryAgain,
   good,
+  progress,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false)
 
@@ -131,6 +147,7 @@ const FlashCard = ({
     <div className={`${className ? className : ""}`}>
       <FlashCardSide
         isFront={true}
+        progress={progress ? progress : "0"}
         prompt={prompt}
         sectionTitle={sectionTitle}
         onClick={() => setIsFlipped(true)}
