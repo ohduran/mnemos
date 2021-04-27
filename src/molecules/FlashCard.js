@@ -20,7 +20,7 @@ const FlashCardSide = ({
       tabIndex={0}
       className={`${className} bg-gradient-to-tr ${
         isFront
-          ? "from-gray-700 via-gray-800 to-gray-900 text-michelangelo-white"
+          ? "from-gray-700 via-gray-800 to-gray-900 text-nord-6"
           : "from-nord-12 via-nord-13 to-nord-14 text-gray-800"
       }   w-64 sm:w-72 md:w-80 h-full rounded-2xl shadow-lg grid p-1 items-center justify-center`}
       style={{
@@ -29,7 +29,7 @@ const FlashCardSide = ({
       }}
     >
       <div
-        className="h-full w-full border border-michelangelo-blue rounded-xl grid"
+        className="h-full w-full border border-nord-10 rounded-xl grid"
         style={{ gridTemplateRows: "max-content max-content 1fr max-content" }}
       >
         <div className="row-start-1 pt-1 flex justify-between items-baseline">

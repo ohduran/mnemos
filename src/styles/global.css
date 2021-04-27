@@ -93,7 +93,7 @@
 }
 
 body{
-  @apply font-family-primary bg-michelangelo-white overscroll-none text-nord-0;
+  @apply font-family-primary bg-nord-6 overscroll-none text-nord-0;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }

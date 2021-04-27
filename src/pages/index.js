@@ -133,15 +133,21 @@ export default function Home({ data }) {
               Conviértete en patrón, <br className="hidden md:block" /> incluso
               si no tienes tiempo.
             </h3>
-            <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed text-michelangelo-white">
-              Utilizando el <span>recuerdo activo</span> y la{" "}
-              <span>repetición espaciada</span>, te impresionará lo fácil y
-              rápido que es sacarse el título.
+            <p className="mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed text-nord-6">
+              Utilizando el{" "}
+              <span className="font-family-secondary text-lg sm:text-xl md:text-2xl">
+                recuerdo activo
+              </span>{" "}
+              y la{" "}
+              <span className="font-family-secondary text-lg sm:text-xl md:text-2xl">
+                repetición espaciada
+              </span>
+              , te impresionará lo fácil y rápido que es sacarse el título.
             </p>
           </div>
         </div>
         <div
-          className="mt-12 grid gap-8 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-xs sm:text-base text-michelangelo-white"
+          className="mt-12 grid gap-8 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-xs sm:text-base text-nord-6"
           style={{
             gridTemplateColumns: "1fr 1fr",
             gridTemplateRows: "max-content max-content",
@@ -218,14 +224,14 @@ export default function Home({ data }) {
           <h3>¿Cómo funciona?</h3>
           <p>
             Los métodos tradicionales intentan "copiar y pegar" el temario en tu
-            mente con clases y lecciones. Pero el cerebro no funciona como un
+            cabeza con clases y lecciones. Pero el cerebro no funciona como un
             ordenador, sino como un músculo.
           </p>
           <p>
-            A base de entrenamiento diario, ejercicios de dificultad progresiva
-            y repeticiones, tu mente procesa, integra y memoriza casi sin
-            esforzarse. Nemos funciona gracias a dos conceptos muy simples: el
-            recuerdo activo y la repetición espaciada.
+            Nemos funciona gracias a dos conceptos muy simples: el recuerdo
+            activo y la repetición espaciada. A base de entrenamiento diario,
+            ejercicios de dificultad progresiva y repeticiones, tu mente
+            procesará, integrará y memorizará casi sin esforzarse.
           </p>
           <h4>Recuerdo activo</h4>
           <p>
@@ -233,9 +239,10 @@ export default function Home({ data }) {
             <em>
               hacerte preguntas y tratar de recordar la respuesta sin mirar
             </em>
-            . Nada que ver con lo que hacemos habitualmente para estudiar, que
-            suele ser leer, escuchar o ver videos repetidas veces sin pararnos a
-            pensar en si estamos aprendiendo algo.
+            . No se parece en nada a lo que hacemos tradicionalmente al
+            estudiar, que es leer el temario, escuchar a un profesor dar clase o
+            ver videos repetidas veces sin pararnos a pensar en si estamos
+            aprendiendo algo.
           </p>
           <p>
             La ciencia ha demostrado hasta la saciedad que{" "}
@@ -289,8 +296,11 @@ export default function Home({ data }) {
             ponen el enfoque en la pizarra y las clases. Con Nemos, ponemos a tu
             disposición <em>flash cards</em> pensadas especialmente en
             consolidar los conocimientos, no en evaluarlos. Con los "exámenes de
-            años anteriores", compruebas si lo has aprendido; con las flash
-            cards de Nemos, <strong>estarás aprendiendo</strong>.
+            años anteriores", compruebas si lo has aprendido;{" "}
+            <strong>
+              con las <em>flash cards</em> de Nemos estarás aprendiendo
+            </strong>
+            .
           </p>
 
           <FlashCardSet
@@ -432,20 +442,18 @@ export default function Home({ data }) {
           <h4>Repetición espaciada</h4>
           <p>
             El único problema con los repasos es que, tradicionalmente, no han
-            sido nunca nada prácticos. Si te enfrentas a temarios muy densos,
-            repasar puede convertirse una especie de juegos malabares mentales.
-            Tanto si te dedicas a leer y releer libros de texto como a pasar a
-            toda velocidad por tu paquete de <em>flash cards</em>, hay un límite
-            en lo que podemos repasar en un día, y lo que no repasamos se nos va
-            olvidando.
+            sido nunca nada prácticos. Tanto si te dedicas a releer libros de
+            texto como a pasar a toda velocidad por tu paquete de{" "}
+            <em>flash cards</em>, hay un límite en lo que podemos repasar en un
+            día, y lo que no repasamos se nos va olvidando.
           </p>
           <p>
             Afortunadamente, los seres humanos olvidan de una manera predecible.
-            Si dibujásemos la evolución de la probabilidad de recordar una idea
-            con el tiempo, sería una curva que caería rápidamente al principio,
-            pero que luego se estabiliza, y que podemos <em>levantar</em> con el
-            repaso. Es algo que la ciencia conoce desde hace más de 200 años,
-            pero que sólo recientemente ha podido ponerse en práctica.
+            La probabilidad de recordar algo disminuye rápidamente los primeros
+            días, pero que luego se estabiliza, y podemos{" "}
+            <em>aumentarla de nuevo</em> con el repaso. Es algo que la ciencia
+            conoce desde hace más de 200 años, pero que sólo recientemente ha
+            podido ponerse en práctica.
           </p>
           <div className="flex items-center justify-center">
             <StaticImage
@@ -455,8 +463,9 @@ export default function Home({ data }) {
             />
           </div>
           <p>
-            Repasa muy pronto, y estarás perdiendo el tiempo; repasa muy tarde y
-            habrás olvidado el temario y tendrás que aprenderlo otra vez.{" "}
+            Si repasas demasiado pronto, estarás perdiendo el tiempo; si repasas
+            demasiado tarde, habrás olvidado el temario y tendrás que aprenderlo
+            otra vez.{" "}
             <strong>
               El momento óptimo para repasar es justo en el momento en que lo
               vas a olvidar
@@ -466,11 +475,11 @@ export default function Home({ data }) {
           </p>
           <p>
             Utilizando un ordenador, es posible clasificar las{" "}
-            <em>flash cards</em> según el día en que han de repasarse, de tal
-            manera que las más fáciles se ven menos (ya están memorizadas), y
-            las más difíciles se ven con más frecuencia (necesitan más
-            dedicación). Esta manera de trabajar, optimizando el tiempo de
-            estudio, se conoce como <strong>repetición espaciada</strong>.
+            <em>flash cards</em> según el día en que tienes que repasarlas, de
+            tal manera que las más fáciles las verás menos, y las más difíciles
+            las verás más a menudo. Esta manera de trabajar, optimizando el
+            tiempo de estudio, se conoce como{" "}
+            <strong>repetición espaciada</strong>.
           </p>
           <FlashCardSet
             className="my-5 sm:my-7"
@@ -520,23 +529,20 @@ export default function Home({ data }) {
           />
           <p>
             Es frustrante lo rápido que olvidamos lo que leemos. Para según qué
-            cosas no es muy importante, pero cuando necesitamos memorizar
-            conceptos como los del PER, que pueden suponer la diferencia entre
-            un día fantástico en la mar o un embrollo, procesar, entender y
-            memorizar se vuelve vital.
+            cosas no es muy importante, pero cuando estamos a bordo, tener las
+            ideas claras y no un vago recuerdo puede suponer la diferencia entre
+            un día fantástico en la mar o un quebradero de cabeza.
           </p>
           <p>
             La inmensa mayoría de cursos para <em>aprobar</em> el PER se centran
             en el examen, y es habitual que al cabo de unos meses toda esa
-            información se haya olvidado. Información que es importante retener,
-            como qué hacer en una situación de vuelta encontrada, o qué hacer
-            cuando necesitas pedir ayuda.
+            información se haya olvidado.
           </p>
           <p>
             Gracias al recuerdo activo y a la repetición espaciada, Nemos es el
             programa perfecto para que aprobar el PER sea sólo el principio, y
-            que tengas la confianza de que, cuando navegas, estás bajo control.
-            La seguridad del patrón.
+            que tengas la confianza de que, cuando navegas, está todo bajo
+            control.
           </p>
           <FlashCardSet
             className="my-5 sm:my-7"
@@ -552,7 +558,7 @@ export default function Home({ data }) {
               <>
                 <p>¡Ya está!</p>
                 <Link
-                  className="text-nord-13 font-semibold hover:underline"
+                  className="text-nord-13 font-semibold hover:underline animate-pulse"
                   to="/#registrate"
                 >
                   ¿Te apuntas?
