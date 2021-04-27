@@ -4,14 +4,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        michelangelo: {
-          blue: "#42819F",
-          brown: "#555234",
-          green: "#86AA7D",
-          yellow: "#CBB396",
-          orange: "#4D280F",
-          white: "#F4EEF3",
-        },
         nord: {
           0: "#2e3440",
           1: "#3b4252",

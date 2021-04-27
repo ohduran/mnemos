@@ -1,3 +1,5 @@
-import FlashCardSet from "../organisms/FlashCardSet"
+import FlashCardSet from "./FlashCardSet"
+import Footer from "./Footer"
+import NavBar from "./NavBar"
 
-export { FlashCardSet }
+export { FlashCardSet, Footer, NavBar }

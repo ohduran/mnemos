@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { FlashCard, FlashCardSetCompleteFlashCard } from "../molecules"
 
-const FlashCardSet = ({ questions, className }) => {
+const FlashCardSet = ({ questions, className, completeSetMessage }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [progress, setProgress] = useState(0)
   const [listOfQuestions, setListOfQuestions] = useState(questions)
 
   const handleNextCard = () => {
@@ -24,6 +25,7 @@ const FlashCardSet = ({ questions, className }) => {
       item => listOfQuestions.indexOf(item) !== currentIndex
     )
     setListOfQuestions(newListOfQuestions)
+    setProgress(100 - (newListOfQuestions.length / questions.length) * 100)
   }
 
   return (
@@ -36,6 +38,7 @@ const FlashCardSet = ({ questions, className }) => {
             prompt={question.prompt}
             answer={question.answer}
             sectionTitle={question.sectionTitle}
+            progress={progress}
             tryAgain={() => {
               handleNextCard()
             }}
@@ -45,7 +48,9 @@ const FlashCardSet = ({ questions, className }) => {
           />
         ))
       ) : (
-        <FlashCardSetCompleteFlashCard />
+        <FlashCardSetCompleteFlashCard>
+          {completeSetMessage ? completeSetMessage : "El repaso ha finalizado"}
+        </FlashCardSetCompleteFlashCard>
       )}
     </div>
   )
