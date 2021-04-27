@@ -7,6 +7,7 @@ import { graphql, Link } from "gatsby"
 import * as howItWorksStyles from "../styles/how-it-works.module.css"
 
 import HeroImage from "../../static/marc-wieland-YFFPD62BXQY-unsplash.jpg"
+import { Testimonial } from "../molecules"
 
 export default function Home({ data }) {
   return (
@@ -233,6 +234,40 @@ export default function Home({ data }) {
             ejercicios de dificultad progresiva y repeticiones, tu mente
             procesará, integrará y memorizará casi sin esforzarse.
           </p>
+        </article>
+      </section>
+      <section>
+        <div className="mt-12 w-11/12 lg:w-10/12 mx-auto flex flex-col md:flex-row justify-around">
+          <Testimonial
+            author="Nuria, de Castellón"
+            className="bg-gradient-to-br from-nord-7 via-nord-8 to-nord-9 text-nord-6"
+            authorImageSrc="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80"
+          >
+            ¡Me encanta! Me ha enseñado perseverancia y compromiso. Unos minutos
+            al día han sido suficientes para aprobar el PER.
+          </Testimonial>
+          <Testimonial
+            className="mt-5 md:mt-0 md:ml-5 bg-gradient-to-r from-nord-7 via-nord-9 to-nord-8 text-nord-6"
+            author="Pablo, de Mallorca"
+            authorImageSrc="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80"
+          >
+            Es como en Matrix, cuando Neo se conectaba a un ordenador y al cabo
+            de unas horas ya sabía kung-fu.
+          </Testimonial>
+          <Testimonial
+            className="mt-5 md:mt-0 md:ml-5 bg-gradient-to-tr from-nord-9 via-nord-7 to-nord-8 text-nord-6"
+            author="Silvia, de Madrid"
+            authorImageSrc="https://images.unsplash.com/photo-1543871595-e11129e271cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          >
+            ¿Te queda una semana para presentarte al PER? Nemos. ¿Te queda un
+            mes? Nemos. Es un programa fantástico.
+          </Testimonial>
+        </div>
+      </section>
+      <section>
+        <article
+          className={`mt-12 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0 ${howItWorksStyles.wrapper}`}
+        >
           <h4>Recuerdo activo</h4>
           <p>
             El recuerdo activo es el método de estudio que consiste en{" "}
@@ -274,8 +309,8 @@ export default function Home({ data }) {
             }
           />
           <p>
-            ¿Por qué el recuerdo activo es una técnica útil? Los
-            neurocientíficos han llegado a dos importantes conclusiones:
+            ¿Por qué el recuerdo activo es sí es útil? Los neurocientíficos han
+            llegado a dos importantes conclusiones:
           </p>
           <ol className="">
             <li className="">
@@ -450,10 +485,8 @@ export default function Home({ data }) {
           <p>
             Afortunadamente, los seres humanos olvidan de una manera predecible.
             La probabilidad de recordar algo disminuye rápidamente los primeros
-            días, pero que luego se estabiliza, y podemos{" "}
-            <em>aumentarla de nuevo</em> con el repaso. Es algo que la ciencia
-            conoce desde hace más de 200 años, pero que sólo recientemente ha
-            podido ponerse en práctica.
+            días, pero luego se estabiliza, y podemos{" "}
+            <em>aumentarla de nuevo</em> con el repaso.
           </p>
           <div className="flex items-center justify-center">
             <StaticImage
