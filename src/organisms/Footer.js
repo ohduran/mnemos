@@ -33,9 +33,9 @@ const Footer = ({ className }) => {
                 y1="469.0296477168"
                 y2="42.9620562848"
               >
-                <stop offset="0" stop-color="#ffd600" />
-                <stop offset=".5" stop-color="#ff0100" />
-                <stop offset="1" stop-color="#d800b9" />
+                <stop offset="0" stopColor="#ffd600" />
+                <stop offset=".5" stopColor="#ff0100" />
+                <stop offset="1" stopColor="#d800b9" />
               </linearGradient>
               <linearGradient
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +46,9 @@ const Footer = ({ className }) => {
                 y1="348.9538083312"
                 y2="163.0428956304"
               >
-                <stop offset="0" stop-color="#ff6400" />
-                <stop offset=".5" stop-color="#ff0100" />
-                <stop offset="1" stop-color="#fd0056" />
+                <stop offset="0" stopColor="#ff6400" />
+                <stop offset=".5" stopColor="#ff0100" />
+                <stop offset="1" stopColor="#fd0056" />
               </linearGradient>
               <linearGradient
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@ const Footer = ({ className }) => {
                 y1="141.0676714336"
                 y2="97.6240189856"
               >
-                <stop offset="0" stop-color="#f30072" />
-                <stop offset="1" stop-color="#e50097" />
+                <stop offset="0" stopColor="#f30072" />
+                <stop offset="1" stopColor="#e50097" />
               </linearGradient>
               <path
                 xmlns="http://www.w3.org/2000/svg"

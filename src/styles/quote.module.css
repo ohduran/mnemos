@@ -1,0 +1,5 @@
+.quote blockquote:first-child:before {
+    @apply text-nord-4 font-extrabold opacity-30 text-9xl absolute top-0 left-2;
+    content: '\201C';
+    font-family: 'Orelega One', ui-serif, Georgia, Cambria, "Times New Roman", Times, cursive;
+}
