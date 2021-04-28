@@ -1,11 +1,14 @@
-import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import { Helm } from "../icons"
+
+import * as quoteStyles from "../styles/quote.module.css"
 
 const Testimonial = ({ children, author, authorImageSrc, className }) => {
   return (
     <div
-      className={`${className} text-nord-0 w-64 sm:w-72 md:w-80 h-full rounded-2xl shadow-lg grid p-1 items-center justify-center`}
+      className={`${
+        className ? className : ""
+      } text-nord-0 w-64 sm:w-72 md:w-80 rounded-2xl shadow-lg grid p-1 items-center justify-center relative`}
       style={{
         gridTemplateColumns: "1fr",
         minHeight: "24rem",
@@ -22,12 +25,18 @@ const Testimonial = ({ children, author, authorImageSrc, className }) => {
           </div>
         </div>
 
-        <div className="row-start-2 self-center justify-self-center mx-1 text-xl">
-          <blockquote className="mx-2 font-semibold">{children}</blockquote>
-          <p className="mt-3 md:mt-5 text-center"> — {author}</p>
-          <div className="flex justify-center">
+        <div
+          className={`row-start-2 self-center justify-self-center mx-1 pt-5 text-xl ${quoteStyles.quote} `}
+        >
+          <blockquote className="mt-3 md:mt-5 mx-2 font-semibold">
+            {children}
+          </blockquote>
+        </div>
+        <div className="row-start-3 mt-3 md:mt-5 mr-3 pb-3">
+          <p className="text-right"> — {author}</p>
+          <div className="flex justify-end">
             <img
-              className="rounded-full shadow-lg mt-3 md:mt-5 h-16 w-16 object-cover"
+              className="rounded-full mt-3 h-16 w-16 object-cover shadow-xl border-2 border-nord-6"
               src={authorImageSrc}
               alt={`Foto de ${author}`}
             />

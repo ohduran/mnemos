@@ -237,14 +237,22 @@ export default function Home({ data }) {
         </article>
       </section>
       <section>
-        <div className="mt-12 w-11/12 lg:w-10/12 mx-auto flex flex-col md:flex-row justify-around">
+        <div className="mt-12 w-11/12 lg:w-10/12 mx-auto flex flex-col md:flex-row justify-center items-center md:items-stretch">
           <Testimonial
             author="Nuria, de Castellón"
             className="bg-gradient-to-br from-nord-7 via-nord-8 to-nord-9 text-nord-6"
             authorImageSrc="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80"
           >
-            ¡Me encanta! Me ha enseñado perseverancia y compromiso. Unos minutos
-            al día han sido suficientes para aprobar el PER.
+            Nunca creí que podría estudiar el tema de cartas náuticas desde el
+            iPhone.
+          </Testimonial>
+          <Testimonial
+            className="mt-5 md:mt-0 md:ml-5 bg-gradient-to-tr from-nord-9 via-nord-7 to-nord-8 text-nord-6"
+            author="Silvia, de Madrid"
+            authorImageSrc="https://images.unsplash.com/photo-1543871595-e11129e271cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          >
+            Después de semanas viendo videos de luces y marcas y no recordar
+            nada, me puse con vosotros y menudo cambio!
           </Testimonial>
           <Testimonial
             className="mt-5 md:mt-0 md:ml-5 bg-gradient-to-r from-nord-7 via-nord-9 to-nord-8 text-nord-6"
@@ -253,14 +261,6 @@ export default function Home({ data }) {
           >
             Es como en Matrix, cuando Neo se conectaba a un ordenador y al cabo
             de unas horas ya sabía kung-fu.
-          </Testimonial>
-          <Testimonial
-            className="mt-5 md:mt-0 md:ml-5 bg-gradient-to-tr from-nord-9 via-nord-7 to-nord-8 text-nord-6"
-            author="Silvia, de Madrid"
-            authorImageSrc="https://images.unsplash.com/photo-1543871595-e11129e271cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-          >
-            ¿Te queda una semana para presentarte al PER? Nemos. ¿Te queda un
-            mes? Nemos. Es un programa fantástico.
           </Testimonial>
         </div>
       </section>
