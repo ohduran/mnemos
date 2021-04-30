@@ -1,12 +1,14 @@
-# Use an official node runtime as a parent image
-FROM node:latest as builder
-
-WORKDIR /app/
-
-COPY ./package*.json ./
-
-RUN mkdir node_modules && npm install
-
 FROM node:latest
-RUN npm install --global gatsby-cli && gatsby telemetry --disable && mkdir /save
-COPY --from=builder /app/node_modules /save/node_modules
+
+RUN mkdir /app
+WORKDIR /app
+RUN npm i -g gatsby-cli --legacy-peer-deps --arch=x64 --platform=linux
+RUN gatsby telemetry --disable
+COPY ./package*.json /app/
+RUN npm install --legacy-peer-deps --arch=x64 --platform=linux
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY . /app/
+EXPOSE 9000
+CMD ["./entrypoint.sh"]
