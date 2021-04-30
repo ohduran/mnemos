@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  frontend:
+    build: ./frontend # link to subfolder of mono-repo
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./frontend:/app
+    restart: "no"
+    # allows the frontend to access the backend at localhost, which allows Gatsby to access the api
+    # and the Api to include localhost:8000 (and not backend:8000) in the image paths.
+    # network_mode: "service:backend"
