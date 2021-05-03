@@ -97,7 +97,7 @@ export default function Home({ data }) {
                     value="¡Me apunto!"
                     name="subscribe"
                     id="mc-embedded-subscribe"
-                    className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl"
+                    className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl bg-nord-10"
                   />
                 </div>
               </div>
@@ -105,7 +105,9 @@ export default function Home({ data }) {
           </div>
         </div>
         <svg
-          className="shadow"
+          style={{
+            marginBottom: "-0.0625rem",
+          }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
@@ -117,7 +119,7 @@ export default function Home({ data }) {
         </svg>
       </section>
 
-      <section className="-mt-2 bg-nord-10">
+      <section className="pt-2 bg-nord-10">
         <div
           className="grid w-11/12 lg:w-8/12 max-w-4xl mx-auto items-center"
           style={{
@@ -209,7 +211,13 @@ export default function Home({ data }) {
         </div>
       </section>
       <section>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          style={{
+            marginTop: "-0.0625rem",
+          }}
+        >
           <path
             fill="#5e81ac"
             fillOpacity="1"
@@ -684,7 +692,7 @@ export default function Home({ data }) {
                   value="¡Me apunto!"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl"
+                  className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl bg-nord-10"
                 />
               </div>
             </div>
