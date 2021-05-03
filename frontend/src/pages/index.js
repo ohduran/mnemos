@@ -236,7 +236,7 @@ export default function Home({ data }) {
           </p>
         </article>
       </section>
-      <section>
+      {/* <section>
         <div className="mt-12 w-11/12 lg:w-10/12 mx-auto flex flex-col md:flex-row justify-center items-center md:items-stretch">
           <Testimonial
             author="Nuria, de Castellón"
@@ -263,7 +263,7 @@ export default function Home({ data }) {
             de unas horas ya sabía kung-fu.
           </Testimonial>
         </div>
-      </section>
+      </section> */}
       <section>
         <article
           className={`mt-12 w-11/12 lg:w-8/12 max-w-4xl mx-auto text-nord-0 ${howItWorksStyles.wrapper}`}
