@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'graphene_django',
     'django_extensions',
 
+    'flashcards.apps.FlashcardsConfig',
     'users.apps.UsersConfig',
 ]
 
@@ -133,3 +135,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GRAPHENE = {
+    "SCHEMA": "backend.schema.schema"
+}
