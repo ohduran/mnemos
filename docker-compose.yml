@@ -1,13 +1,31 @@
 version: "3.7"
 
 services:
-  frontend:
-    build: ./frontend # link to subfolder of mono-repo
+  nemos:
+    build: ./nemos # link to subfolder of mono-repo
     ports:
       - "9000:9000"
     volumes:
-      - ./frontend:/app
+      - ./nemos:/app
     restart: "no"
-    # allows the frontend to access the backend at localhost, which allows Gatsby to access the api
-    # and the Api to include localhost:8000 (and not backend:8000) in the image paths.
-    # network_mode: "service:backend"
+  db:
+    image: "postgres:13"
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  backend:
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - SECRET_KEY=django-insecure-u%bb^#gy%77z%sv)3iwms9_n0e$$nvvm4-55*46m%5*=-!)0n28
+      - DEBUG=1
+
+volumes:
+  postgres_data:
