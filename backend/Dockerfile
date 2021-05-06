@@ -2,8 +2,8 @@
 FROM python:latest
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Adding backend directory to make absolute filepaths consistent across services
 WORKDIR /app/
