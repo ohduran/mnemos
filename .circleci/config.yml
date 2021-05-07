@@ -23,7 +23,7 @@ jobs:
     # The executor is the environment in which the steps below will be executed - below will use a python 3.9 container
     # Change the version below to your required version of python
     docker:
-      - image: cimg/python:3.9
+      - image: circleci/python:3.9
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
@@ -32,10 +32,11 @@ jobs:
     steps:
       - checkout
       - run:
-          command: |  # use pipenv to install dependencies
-            sudo pip install pipenv
-            pipenv install -r backend/requirements/development.txt
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r backend/requirements/development.txt
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: pytest backend
+          command: pipenv run pytest backend
