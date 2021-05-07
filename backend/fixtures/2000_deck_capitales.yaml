@@ -1,15 +1,22 @@
+- model: decks.deck
+  pk: 1
+  fields:
+    name: Capitales
 - model: flashcards.flashcard
   pk: 1
   fields:
     prompt: ¿Cuál es la capital de Francia?
     answer: París
+    deck: 1
 - model: flashcards.flashcard
   pk: 2
   fields:
     prompt: ¿Cuál es la capital de España?
     answer: Madrid
+    deck: 1
 - model: flashcards.flashcard
   pk: 3
   fields:
     prompt: ¿Cuál es la capital de Australia?
     answer: Canberra
+    deck: 1

@@ -9,23 +9,25 @@ services:
       - ./nemos:/app
     restart: "no"
   db:
-    image: "postgres:13"
+    image: postgres:13
     environment:
-      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=mnemos
+      - POSTGRES_PASSWORD=mnemos
+      - POSTGRES_DB=mnemos_dev
     volumes:
       - postgres_data:/var/lib/postgresql/data/
   backend:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./backend:/app
+      - ./backend/:/usr/src/app/
     ports:
       - 8000:8000
     depends_on:
       - db
-    environment:
-      - SECRET_KEY=django-insecure-u%bb^#gy%77z%sv)3iwms9_n0e$$nvvm4-55*46m%5*=-!)0n28
-      - DEBUG=1
+    env_file:
+      - ./backend/.env.dev
 
 volumes:
   postgres_data:
