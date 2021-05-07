@@ -1,6 +1,5 @@
 # Master branches
-Django
-# https://github.com/django/django/archive/main.tar.gz  # django
+https://github.com/django/django/archive/main.tar.gz  # django
 https://github.com/graphql-python/graphene/archive/master.tar.gz  # graphene
 https://github.com/graphql-python/graphene-django/archive/main.tar.gz  # graphene-django
 
