@@ -1,6 +1,10 @@
 # Master branches
-https://github.com/django/django/archive/main.tar.gz
-https://github.com/encode/django-rest-framework/archive/master.tar.gz
+Django
+# https://github.com/django/django/archive/main.tar.gz  # django
+https://github.com/graphql-python/graphene/archive/master.tar.gz  # graphene
+https://github.com/graphql-python/graphene-django/archive/main.tar.gz  # graphene-django
 
 psycopg2-binary==2.8.6
 PyYAML==5.4.1
+
+django-extensions==3.1.3
