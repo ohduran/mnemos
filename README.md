@@ -21,3 +21,5 @@ https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
 https://docs.docker.com/compose/extends/
 
 https://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html
+
+https://jeffersonheard.github.io/python/graphql/2018/12/08/graphene-python.html
