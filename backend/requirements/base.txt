@@ -6,4 +6,5 @@ https://github.com/graphql-python/graphene-django/archive/main.tar.gz  # graphen
 psycopg2-binary==2.8.6
 PyYAML==5.4.1
 
+django-cors-headers==3.7.0
 django-extensions==3.1.3

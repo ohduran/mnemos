@@ -1,7 +1,7 @@
 - model: decks.deck
   pk: 1
   fields:
-    name: Capitales
+    name: Nemos
 - model: flashcards.flashcard
   pk: 1
   fields:

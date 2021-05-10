@@ -2,16 +2,22 @@ version: "3.8"
 
 services:
   nemos:
-    build: ./nemos # link to subfolder of mono-repo
+    build: ./nemos
+    command: gatsby develop -H 0.0.0.0 -p 9000
     ports:
       - "9000:9000"
     volumes:
-      - ./nemos:/app
+      - /app/node_modules
+      - ./nemos/:/app/
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/
+      - CHOKIDAR_USEPOLLING=1
     restart: "no"
   db:
     image: postgres:13
     environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_USER=mnemos
       - POSTGRES_PASSWORD=mnemos
       - POSTGRES_DB=mnemos_dev
