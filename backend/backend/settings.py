@@ -27,11 +27,9 @@ DEBUG = int(os.environ.get('DEBUG', default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    'http://localhost:9000/\w+'
-]
+CORS_ALLOWED_ORIGIN_REGEXES = os.environ.get(
+    "DJANGO_CORS_ALLOWED_ORIGINS", "").split(" ")
 
-CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
