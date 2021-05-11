@@ -69,7 +69,6 @@ jobs:
       - checkout
       - run:
           command: |
-            yarn global add gatsby-cli && gatsby telemetry --disable
             yarn install && yarn cache clean
       - run:
           name: Run tests
