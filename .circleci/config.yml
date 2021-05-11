@@ -68,13 +68,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: |
-          cd nemos
-          yarn install
-          yarn cache clean
+          command: cd nemos && yarn install
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: |
-            cd nemos
-            yarn test
+          command: cd nemos && yarn test
