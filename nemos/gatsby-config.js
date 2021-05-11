@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-transformer-sharp`, // Needed for dynamic images
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: 'http://localhost:8000/graphql/',
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `texts`,
