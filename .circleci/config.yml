@@ -74,4 +74,4 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: |
-            cd nemos &&yarn test
+            cd nemos && yarn test
