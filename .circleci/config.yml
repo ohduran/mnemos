@@ -69,9 +69,9 @@ jobs:
       - checkout
       - run:
           command: |
-            yarn install && yarn cache clean
+          cd nemos && yarn install && yarn cache clean
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: |
-            yarn test
+            cd nemos &&yarn test
