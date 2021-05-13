@@ -9,10 +9,10 @@ import { DayDreaming, Brain, InformationCarousel, RocketBoy, Thinking } from "..
 export default function Ciencia({ data }) {
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center min-h-screen w-11/12 mx-auto">
+      <section className="flex flex-col items-center min-h-screen w-11/12 mx-auto pb-5">
         <Brain className="mt-5 h-80 md:h-96" />
         <h1 className="mt-3 text-6xl sm:text-7xl md:text-8xl font-semibold font-family-secondary">Ciencia</h1>
-        <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl">Los avances científicos que hacen posible Nemos</h2>
+        <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl text-center">Los avances científicos<br/>que hacen posible Nemos</h2>
         <div className="mt-5">
           <p className="w-10/12 mx-auto text-center sm:text-lg md:text-xl leading-loose">
             No es estudiar por tu cuenta si tienes como aliados a educadores, psicólogos y neurocientíficos. Utilizamos lo que la ciencia nos enseña para que sea más fácil, más divertido y más eficiente aprender a navegar.
