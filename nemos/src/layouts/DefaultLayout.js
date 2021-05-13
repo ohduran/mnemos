@@ -1,6 +1,6 @@
 import React from "react"
 
-import { SEO } from "../molecules"
+import { Seo } from "../molecules"
 import { Footer, NavBar } from "../organisms"
 
 const DefaultLayout = ({ children, className }) => {
@@ -13,7 +13,7 @@ const DefaultLayout = ({ children, className }) => {
         gridTemplateRows: "max-content 1fr max-content",
       }}
     >
-      <SEO
+      <Seo
         title={"Nemos"}
         description={"Estudia el PER con viento de popa"}
         article={false}
