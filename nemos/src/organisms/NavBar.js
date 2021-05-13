@@ -20,6 +20,11 @@ const NavBar = ({ className }) => {
       </Link>
       <ul className="col-start-3 flex justify-around text-nord-1 text-sm font-semibold">
         <li>
+          <Link className="text-nord-3 hover:text-nord-0" to="/ciencia">
+            Ciencia
+          </Link>
+        </li>
+        <li className="ml-5">
           <Link to="/#registrate">Regístrate</Link>
         </li>
       </ul>

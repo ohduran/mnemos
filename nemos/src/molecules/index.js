@@ -1,5 +1,6 @@
 import FlashCard, { FlashCardSetCompleteFlashCard } from "./FlashCard"
-import SEO from "./SEO"
+import Seo from "./SEO"
+import TeaserText from "./TeaserText"
 import Testimonial from "./Testimonial"
 
-export { FlashCard, FlashCardSetCompleteFlashCard, SEO, Testimonial }
+export { FlashCard, FlashCardSetCompleteFlashCard, Seo, TeaserText, Testimonial }
