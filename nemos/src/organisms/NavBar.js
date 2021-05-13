@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Helm } from "../icons"
+import { LoginButton } from "../molecules"
 
 const NavBar = ({ className }) => {
   return (
@@ -18,14 +19,16 @@ const NavBar = ({ className }) => {
           Nemos
         </h1>
       </Link>
-      <ul className="col-start-3 flex justify-around text-nord-1 text-sm font-semibold">
+      <ul className="col-start-3 flex justify-around items-baseline text-nord-1 text-sm md:text-md lg:text-lg font-semibold">
         <li>
           <Link className="text-nord-3 hover:text-nord-0" to="/ciencia">
             Ciencia
           </Link>
         </li>
         <li className="ml-5">
-          <Link to="/#registrate">Regístrate</Link>
+          <LoginButton className="p-2 shadow-lg bg-nord-8 rounded-full text-nord-6 font-semibold">
+            ¡Ùnete ahora!
+          </LoginButton>
         </li>
       </ul>
     </nav>
