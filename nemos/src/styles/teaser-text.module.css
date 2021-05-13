@@ -1,0 +1,19 @@
+.wrapper > h3 {
+    @apply my-3 md:my-5 text-xl sm:text-3xl font-bold;
+}
+
+.wrapper > h4 {
+    @apply mt-3 md:mt-5 text-lg sm:text-xl md:text-2xl font-bold;
+}
+
+.wrapper > p {
+    @apply mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed;
+}
+
+.wrapper > ol {
+    @apply w-11/12 mx-auto list-decimal mt-3 md:mt-5 sm:text-lg md:text-xl leading-loose sm:leading-relaxed;
+}
+
+.wrapper > ol > li {
+    @apply mt-5;
+}

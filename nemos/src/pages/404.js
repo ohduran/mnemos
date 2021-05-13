@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Helm } from "../icons"
-import { SEO } from "../molecules"
+import { Seo } from "../molecules"
 import { FlashCardSet } from "../organisms"
 
 export default function NotFound() {
@@ -12,7 +12,7 @@ export default function NotFound() {
         gridTemplateRows: "max-content 1fr max-content",
       }}
     >
-      <SEO
+      <Seo
         title={"404"}
         description={"Estudia el PER con viento de popa"}
         article={false}
