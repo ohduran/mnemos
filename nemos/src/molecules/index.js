@@ -1,5 +1,5 @@
 import FlashCard, { FlashCardSetCompleteFlashCard } from "./FlashCard"
-import Seo from "./Seo"
+import Seo from "./SEO"
 import TeaserText from "./TeaserText"
 import Testimonial from "./Testimonial"
 
