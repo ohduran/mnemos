@@ -1,9 +1,11 @@
 import React from "react"
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "gatsby"
 import { Helm } from "../icons"
-import { LoginButton } from "../molecules"
+import { LoginButton, LogoutButton } from "../molecules"
 
 const NavBar = ({ className }) => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   return (
     <nav
       className={`${
@@ -19,18 +21,27 @@ const NavBar = ({ className }) => {
           Nemos
         </h1>
       </Link>
-      <ul className="col-start-3 flex justify-around items-baseline text-nord-1 text-sm md:text-md lg:text-lg font-semibold">
-        <li>
+      <ul className="col-start-3 flex justify-around items-center text-nord-1 text-sm md:text-md lg:text-lg font-semibold">
+        <li className="mr-5">
           <Link className="text-nord-3 hover:text-nord-0" to="/ciencia">
             Ciencia
           </Link>
         </li>
-        <li className="ml-5">
-          <LoginButton className="p-2 shadow-lg bg-nord-8 rounded-full text-nord-6 font-semibold">
-            ¡Ùnete ahora!
-          </LoginButton>
-        </li>
+        {isAuthenticated ?
+        <>
+          <li>
+            <img className="h-8 w-8 rounded-full object-cover border border-nord-6" src={user.picture} alt={user.name} />
+          </li>
+          </>
+        :
+          <li>
+            <LoginButton className="p-2 shadow-lg bg-nord-8 rounded-full text-nord-6 font-semibold">
+              ¡Ùnete ahora!
+            </LoginButton>
+          </li>
+        }
       </ul>
+      
     </nav>
   )
 }
