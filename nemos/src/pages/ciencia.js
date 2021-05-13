@@ -1,7 +1,7 @@
 import React from "react"
 import { DefaultLayout } from "../layouts"
 import { Link } from "gatsby"
-import * as howItWorksStyles from "../styles/how-it-works.module.css"
+import { Helm } from "../icons"
 import {Teaser} from "../organisms"
 
 import { DayDreaming, Brain, InformationCarousel, RocketBoy, Thinking } from "../icons"
@@ -45,6 +45,77 @@ export default function Ciencia({ data }) {
       <Teaser isOdd={false} title="Falsas ilusiones de competencia" IconComponent={DayDreaming}>
         Cuando un estudiante percibe que el tiempo de estudio ha sido productivo, pero en realidad no ha hecho más que perder el tiempo, está cayendo en una <em>falsa ilusión de competencia</em>. No es su culpa, sino el resultado de métodos de estudios ineficientes. Simplemente querer aprender y pasar tiempo suficiente con el libro delante no garantiza el aprendizaje. Con Nemos, el tiempo que le dedicas a estudiar será el mínimo imprescindible, pero te exigirá altos niveles de concentración.
       </Teaser>
+      <section id="registrate">
+        <div
+          className="w-11/12 lg:w-8/12 max-w-lg mx-auto py-5 px-5 h-96 rounded-2xl shadow-xl flex flex-col items-center justify-center bg-nord-9"
+          id="mc_embed_signup"
+        >
+          <Helm className="h-16 sm:h-20 w-16 sm:w-20" />
+          <form
+            action="https://gmail.us1.list-manage.com/subscribe/post?u=3027b73fd81dbeb61ffe9b85c&amp;id=1c7064dfbc"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
+            noValidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <h2 className="mt-3 md:mt-5 text-xl sm:text-3xl text-center font-family-secondary font-semibold">
+                Apúntate y te escribiremos cuando esté todo listo
+              </h2>
+              <div className="mc-field-group mt-5 flex flex-col items-center">
+                <label className="text-nord-3" htmlFor="EMAIL">
+                  Email
+                </label>
+                <input
+                  placeholder="tuemail@nemos.es"
+                  autoComplete="email"
+                  type="email"
+                  name="EMAIL"
+                  className="required email text-gray-400 text-sm py-1 px-3 rounded-xl shadow-md w-8/12 mx-auto mt-1"
+                  id="mce-EMAIL"
+                />
+              </div>
+              <div id="mce-responses" className="clear">
+                <div
+                  className="response"
+                  id="mce-error-response"
+                  style={{ display: "none" }}
+                ></div>
+                <div
+                  className="response"
+                  id="mce-success-response"
+                  style={{ display: "none" }}
+                ></div>
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  left: "-5000px",
+                }}
+                aria-hidden="true"
+              >
+                <input
+                  type="text"
+                  name="b_3027b73fd81dbeb61ffe9b85c_1c7064dfbc"
+                  tabIndex="-1"
+                  defaultValue=""
+                />
+              </div>
+              <div className="clear mt-3 md:mt-5 flex items-center">
+                <input
+                  type="submit"
+                  value="¡Me apunto!"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  className="button cursor-pointer rounded-full px-5 py-1 w-8/12 mx-auto font-family-secondary text-lg shadow-xl bg-nord-10"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
     </DefaultLayout>
   )
 }
