@@ -1,7 +1,7 @@
 import React from "react";
+import { navigate } from "gatsby"
 import { useAuth0 } from "@auth0/auth0-react";
-import { LogoutButton } from "../molecules";
-import { DefaultLayout } from "../layouts";
+import { DefaultLayout } from "../../layouts";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -10,8 +10,8 @@ const Profile = () => {
     return <div>Loading ...</div>;
   }
 
-  return (
-    isAuthenticated && (
+  if (isAuthenticated){
+    return (
       <DefaultLayout className="w-11/12 mx-auto my-5">
           <h1 className="text-4xl font-semibold">Bienvenido, {user.given_name}</h1>
           <section className="mt-5">
@@ -19,7 +19,11 @@ const Profile = () => {
           </section>
       </DefaultLayout>
     )
-  );
+  }
+  else{
+    navigate("/")
+    return null
+  }
 };
 
 export default Profile;
