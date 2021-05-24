@@ -1,8 +1,13 @@
+import logging
 import graphene
+import graphql_jwt
+
 from graphene_django import DjangoObjectType
 
 from decks.models import Deck
 from flashcards.models import FlashCard
+
+logger = logging.getLogger(__name__)
 
 
 class DeckType(DjangoObjectType):
@@ -24,13 +29,14 @@ class Query(graphene.ObjectType):
     random_flash_card = graphene.Field(
         FlashCardType, deck_name=graphene.String(required=True))
 
-    def resolve_all_decks(self, context):
+    def resolve_all_decks(self, info):
         return Deck.objects.prefetch_related("flashcards").all()
 
-    def resolve_all_flash_cards(self, context, deck_name):
+    @graphql_jwt.decorators.login_required
+    def resolve_all_flash_cards(self, info, deck_name):
         return FlashCard.objects.select_related("deck").filter(deck__name=deck_name)
 
-    def resolve_random_flash_card(self, context, deck_name):
+    def resolve_random_flash_card(self, info, deck_name):
         return FlashCard.objects.select_related("deck").filter(deck__name=deck_name).order_by('?').first()
 
 

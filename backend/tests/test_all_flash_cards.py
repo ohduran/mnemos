@@ -1,15 +1,41 @@
 import pytest
 import json
+import jwt
+from faker import Faker
+from graphene_django.utils.testing import graphql_query
 
-from .factories import FlashCardFactory, DeckFactory
+from .factories import FlashCardFactory, DeckFactory, UserFactory
+
+
+fake = Faker()
 
 
 @pytest.mark.django_db
-def test_empty_flashcards(client_query, django_assert_num_queries):
+def test_empty_flashcards(mocker, django_assert_num_queries):
+    username = f"google-oauth2.9392"
+
+    user = UserFactory(username=username)
     deck = DeckFactory()
-    FlashCardFactory.create_batch(5, deck=deck)
-    with django_assert_num_queries(1):
-        response = client_query(
+
+    token = jwt.encode({"some": "payload"}, key=fake.sentence())
+    headers = {"HTTP_AUTHORIZATION": f"Bearer {token}"}
+
+    decoded_token_mocker = mocker.patch('users.auth.jwt_decode_token')
+    decoded_token_mocker.return_value = {
+        'iss': fake.url(),
+        'sub': username.replace('.', '|'),
+        'aud': [
+            fake.url(),
+            fake.url(),
+        ],
+        'iat': fake.random_int(),
+        'exp': fake.random_int(),
+        'azp': 'fLEiAprcHhvXTvjCWoDryHfbbJNErZKksCPgsthv',
+        'scope': 'openid profile email read:decks read:flashcards offline_access'
+    }
+
+    with django_assert_num_queries(3):
+        response = graphql_query(
             f'''
             query{{
                 allFlashCards{{
@@ -18,17 +44,42 @@ def test_empty_flashcards(client_query, django_assert_num_queries):
                     answer
                 }}
             }}
-            '''
+            ''',
+            headers=headers,
         )
     assert {'data': {'allFlashCards': []}} == json.loads(response.content)
 
 
 @pytest.mark.django_db
-def test_all_flashcards(client_query, django_assert_num_queries):
+def test_all_flashcards(mocker, django_assert_num_queries):
+    username = f"google-oauth2.9392"
+
+    print(username)
+
+    user = UserFactory(username=username)
     deck = DeckFactory()
+
+    token = jwt.encode({"some": "payload"}, key=fake.sentence())
+    headers = {"HTTP_AUTHORIZATION": f"Bearer {token}"}
+
+    decoded_token_mocker = mocker.patch('users.auth.jwt_decode_token')
+    decoded_token_mocker.return_value = {
+        'iss': fake.url(),
+        'sub': username.replace('.', '|'),
+        'aud': [
+            fake.url(),
+            fake.url(),
+        ],
+        'iat': fake.random_int(),
+        'exp': fake.random_int(),
+        'azp': 'fLEiAprcHhvXTvjCWoDryHfbbJNErZKksCPgsthv',
+        'scope': 'openid profile email read:decks read:flashcards offline_access'
+    }
+
     flashcards = FlashCardFactory.create_batch(5, deck=deck)
-    with django_assert_num_queries(1):
-        response = client_query(
+
+    with django_assert_num_queries(3):
+        response = graphql_query(
             f'''
             query{{
                 allFlashCards(deckName: "{deck.name}"){{
@@ -41,7 +92,8 @@ def test_all_flashcards(client_query, django_assert_num_queries):
                     }}
                 }}
             }}
-            '''
+            ''',
+            headers=headers,
         )
     expected_response = {
         'data': {

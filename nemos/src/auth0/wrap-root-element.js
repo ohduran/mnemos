@@ -8,7 +8,10 @@ export const wrapRootElement = ({element}) => {
             clientId={process.env.AUTH0_CLIENTID}
             redirectUri={process.env.AUTH0_CALLBACK}
             responseType="token id_token"
-            scope="openid profile email"
+            audience="http://localhost:8000/graphql/"
+            scope="read:decks read:flashcards"
+
+            // https://stackoverflow.com/questions/63465924/samesite-cookie-error-on-localhost-with-auth0
             useRefreshTokens={true}
             cacheLocation="localstorage"
         >
