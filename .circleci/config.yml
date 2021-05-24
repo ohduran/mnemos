@@ -28,21 +28,22 @@ jobs:
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
-    environment: SECRET_KEY=secret
-      DEBUG=1
-      DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 0.0.0.0 [::1]
-      DJANGO_CORS_ALLOWED_ORIGINS=^http://localhost.*$
-      SQL_ENGINE=django.db.backends.postgresql
-      SQL_DATABASE=db
-      SQL_USER=postgres
-      SQL_PASSWORD=postgres
-      SQL_HOST=db
-      SQL_PORT=5432
-      DATABASE=postgres
-      JWT_AUDIENCE=http://localhost/graphql/
-      JWT_ISSUER=issuer.auth0.com
-      JWT_CLIENT_ID=client-id
-      JWT_CLIENT_SECRET=super-secret
+    environment:
+      - SECRET_KEY=secret
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 0.0.0.0 [::1]
+      - DJANGO_CORS_ALLOWED_ORIGINS=^http://localhost.*$
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_DATABASE=db
+      - SQL_USER=postgres
+      - SQL_PASSWORD=postgres
+      - SQL_HOST=db
+      - SQL_PORT=5432
+      - DATABASE=postgres
+      - JWT_AUDIENCE=http://localhost/graphql/
+      - JWT_ISSUER=issuer.auth0.com
+      - JWT_CLIENT_ID=client-id
+      - JWT_CLIENT_SECRET=super-secret
 
     resource_class: small
     steps:
