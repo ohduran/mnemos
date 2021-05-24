@@ -22,11 +22,10 @@ const Profile = () => {
 
   useEffect(() => {
     const getUserMetadata = async () => {
-      const domain = "dev--b6sazqj.eu.auth0.com";
   
       try {
         const token = await getAccessTokenSilently({
-          audience: `http://localhost:8000/graphql/`,
+          audience: process.env.AUTH0_AUDIENCE,
           scope: "read:decks",
         });
         setAccessToken(token)

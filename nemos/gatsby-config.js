@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: 'http://localhost:8000/graphql/',
+        uri: `${process.env.AUTH0_AUDIENCE}`,
       }
     },
     {
