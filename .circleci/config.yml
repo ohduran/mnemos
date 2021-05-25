@@ -8,16 +8,15 @@ orbs:
   python: circleci/python@1.2
 
 workflows:
-  sample:  # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run. 
-    # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows 
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
+    # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     jobs:
       - build-and-test-nemos
       - build-and-test-backend
 
-
 jobs:
-  build-and-test-backend:  # This is the name of the job, feel free to change it to better match what you're trying to do!
+  build-and-test-backend: # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of the convenience images from CircleCI's Developer Hub
     # A list of available CircleCI Docker convenience images are available here: https://circleci.com/developer/images/image/cimg/python
@@ -31,10 +30,16 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     environment:
-      SECRET_KEY: secret_key
-      DEBUG: 1
-      DJANGO_ALLOWED_HOSTS: localhost 127.0.0.1 [::1]
-    
+      - SECRET_KEY=secret
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 0.0.0.0 [::1]
+      - DJANGO_CORS_ALLOWED_ORIGINS=^http://localhost.*$
+      - DATABASE=postgres
+      - JWT_AUDIENCE=http://localhost/graphql/
+      - JWT_ISSUER=issuer.auth0.com
+      - JWT_CLIENT_ID=client-id
+      - JWT_CLIENT_SECRET=super-secret
+
     resource_class: small
     steps:
       - checkout
@@ -49,8 +54,8 @@ jobs:
           command: |
             . venv/bin/activate
             pytest backend
-  
-  build-and-test-nemos:  # This is the name of the job, feel free to change it to better match what you're trying to do!
+
+  build-and-test-nemos: # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of the convenience images from CircleCI's Developer Hub
     # A list of available CircleCI Docker convenience images are available here: https://circleci.com/developer/images/image/cimg/python

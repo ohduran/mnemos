@@ -1,12 +1,14 @@
 import pytest
 import json
 
+from graphene_django.utils.testing import graphql_query
+
 from .factories import FlashCardFactory, DeckFactory
 
 
 @pytest.mark.django_db
-def test_empty_decks(client_query):
-    response = client_query(
+def test_empty_decks(client):
+    response = graphql_query(
         '''
         query{
             allDecks{
@@ -14,18 +16,19 @@ def test_empty_decks(client_query):
                 name
             }
         }
-        '''
+        ''',
+        client=client
     )
     assert {'data': {'allDecks': []}} == json.loads(response.content)
 
 
 @pytest.mark.django_db
-def test_all_flashcards(client_query, django_assert_num_queries):
+def test_all_flashcards(client, django_assert_num_queries):
     decks = DeckFactory.create_batch(15)
     for deck in decks:
         FlashCardFactory.create_batch(15, deck=deck)
     with django_assert_num_queries(2):
-        response = client_query(
+        response = graphql_query(
             '''
             query{
                 allDecks{
@@ -38,7 +41,7 @@ def test_all_flashcards(client_query, django_assert_num_queries):
                     }
                 }
             }
-            '''
+            ''',
         )
 
     expected_response = {

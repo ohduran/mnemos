@@ -9,12 +9,8 @@ services:
     volumes:
       - /app/node_modules
       - ./nemos/:/app/
-    working_dir: /app
-    environment:
-      - NODE_ENV=development
-      - GATSBY_WEBPACK_PUBLICPATH=/
-      - CHOKIDAR_USEPOLLING=1
-    restart: "no"
+    env_file:
+      - ./nemos/.env.development
   db:
     image: postgres:13
     environment:
@@ -33,7 +29,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./backend/.env.dev
+      - ./backend/.env.development
 
 volumes:
   postgres_data:

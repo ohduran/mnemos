@@ -1,17 +1,19 @@
 import pytest
 import json
 
+from graphene_django.utils.testing import graphql_query
+
 from flashcards.models import FlashCard
 
 from .factories import FlashCardFactory, DeckFactory
 
 
 @pytest.mark.django_db
-def test_empty_random_flash_cards(client_query, django_assert_num_queries):
+def test_empty_random_flash_cards(client, django_assert_num_queries):
     deck = DeckFactory()
     FlashCardFactory.create_batch(5, deck=deck)
     with django_assert_num_queries(1):
-        response = client_query(
+        response = graphql_query(
             f'''
             query{{
                 randomFlashCard{{
@@ -20,19 +22,19 @@ def test_empty_random_flash_cards(client_query, django_assert_num_queries):
                     answer
                 }}
             }}
-            '''
+            ''',
         )
     assert {'data': {'randomFlashCard': None}} == json.loads(response.content)
 
 
 @pytest.mark.django_db
-def test_random_flash_cards(client_query, django_assert_num_queries):
+def test_random_flash_cards(client, django_assert_num_queries):
     deck = DeckFactory()
     other_deck = DeckFactory()
     flash_cards = FlashCardFactory.create_batch(5, deck=deck)
     other_flash_cards = FlashCardFactory.create_batch(5, deck=other_deck)
     with django_assert_num_queries(1):
-        response_1 = client_query(
+        response_1 = graphql_query(
             f'''
             query{{
                 randomFlashCard(deckName: "{deck.name}"){{
@@ -45,7 +47,7 @@ def test_random_flash_cards(client_query, django_assert_num_queries):
                     }}
                 }}
             }}
-            '''
+            ''',
         )
     random_flash_card_1_data = json.loads(response_1.content)[
         'data']['randomFlashCard']
@@ -54,7 +56,7 @@ def test_random_flash_cards(client_query, django_assert_num_queries):
     assert (flash_card_1.prompt, flash_card_1.answer, str(flash_card_1.deck_id)) == (
         random_flash_card_1_data['prompt'], random_flash_card_1_data['answer'], random_flash_card_1_data['deck']['id'])
 
-    response_2 = client_query(
+    response_2 = graphql_query(
         f'''
             query{{
                 randomFlashCard(deckName: "{deck.name}"){{
@@ -67,7 +69,7 @@ def test_random_flash_cards(client_query, django_assert_num_queries):
                     }}
                 }}
             }}
-            '''
+            ''',
     )
 
     random_flash_card_2_data = json.loads(response_1.content)[

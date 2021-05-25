@@ -7,12 +7,9 @@ const FlashCardSet = ({ questions, className, completeSetMessage }) => {
   const [listOfQuestions, setListOfQuestions] = useState(questions)
 
   const handleNextCard = () => {
-    console.log("handling next card")
     if (currentIndex + 1 < listOfQuestions.length) {
-      console.log(`setting current index to ${currentIndex + 1}`)
       return setCurrentIndex(currentIndex + 1)
     } else {
-      console.log("setting current index to 0")
       return setCurrentIndex(0)
     }
   }
