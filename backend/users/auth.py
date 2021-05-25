@@ -18,9 +18,7 @@ def jwt_get_username_from_payload_handler(payload, *args, **kwargs):
     return username
 
 
-def jwt_decode_token(token, context):
-    import ipdb
-    ipdb.set_trace()
+def jwt_decode_token(token, info):
     header = jwt.get_unverified_header(token)
     jwks = requests.get(
         f'https://{JWT_ISSUER}/.well-known/jwks.json').json()

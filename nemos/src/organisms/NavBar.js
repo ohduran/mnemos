@@ -36,7 +36,7 @@ const NavBar = ({ className }) => {
         :
           <li>
             <LoginButton className="p-2 shadow-lg bg-nord-8 rounded-full text-nord-6 font-semibold">
-              ¡Ùnete ahora!
+              ¡Únete ahora!
             </LoginButton>
           </li>
         }

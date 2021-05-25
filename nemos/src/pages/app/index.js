@@ -29,8 +29,6 @@ const Profile = () => {
           scope: "read:decks",
         });
         setAccessToken(token)
-        console.log('the token is')
-        console.log(accessToken)
 
       } catch (e) {
         console.log(e.message);
