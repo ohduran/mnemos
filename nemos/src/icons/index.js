@@ -7,4 +7,13 @@ import RocketBoy from "./RocketBoy"
 import Sailor from "./Sailor"
 import Thinking from "./Thinking"
 
-export { Brain, BoatAnimated, DayDreaming, Helm, InformationCarousel, RocketBoy, Sailor, Thinking }
+export {
+  Brain,
+  BoatAnimated,
+  DayDreaming,
+  Helm,
+  InformationCarousel,
+  RocketBoy,
+  Sailor,
+  Thinking,
+}

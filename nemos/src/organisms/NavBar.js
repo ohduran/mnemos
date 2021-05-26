@@ -1,11 +1,11 @@
 import React from "react"
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react"
 import { Link } from "gatsby"
 import { Helm } from "../icons"
 import { LoginButton, LogoutButton } from "../molecules"
 
 const NavBar = ({ className }) => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0()
   return (
     <nav
       className={`${
@@ -27,21 +27,24 @@ const NavBar = ({ className }) => {
             Ciencia
           </Link>
         </li>
-        {isAuthenticated ?
-        <>
-          <li>
-            <img className="h-8 w-8 rounded-full object-cover border border-nord-6" src={user.picture} alt={user.name} />
-          </li>
+        {isAuthenticated ? (
+          <>
+            <li>
+              <img
+                className="h-8 w-8 rounded-full object-cover border border-nord-6"
+                src={user.picture}
+                alt={user.name}
+              />
+            </li>
           </>
-        :
+        ) : (
           <li>
             <LoginButton className="p-2 shadow-lg bg-nord-8 rounded-full text-nord-6 font-semibold">
               ¡Únete ahora!
             </LoginButton>
           </li>
-        }
+        )}
       </ul>
-      
     </nav>
   )
 }

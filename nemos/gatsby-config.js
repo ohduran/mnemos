@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
- require("dotenv").config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -23,10 +23,10 @@ module.exports = {
     `gatsby-transformer-sharp`, // Needed for dynamic images
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-apollo',
+      resolve: "gatsby-plugin-apollo",
       options: {
         uri: `${process.env.AUTH0_AUDIENCE}`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
