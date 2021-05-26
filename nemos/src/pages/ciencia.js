@@ -1,8 +1,8 @@
-import React from "react"
-import { DefaultLayout } from "../layouts"
-import { Link } from "gatsby"
-import { Helm } from "../icons"
-import { Teaser } from "../organisms"
+import React from "react";
+import {DefaultLayout} from "../layouts";
+import {Link} from "gatsby";
+import {Helm} from "../icons";
+import {Teaser} from "../organisms";
 
 import {
   DayDreaming,
@@ -10,9 +10,9 @@ import {
   InformationCarousel,
   RocketBoy,
   Thinking,
-} from "../icons"
+} from "../icons";
 
-export default function Ciencia({ data }) {
+export default function Ciencia({data}) {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center min-h-screen w-11/12 mx-auto pb-5">
@@ -131,12 +131,12 @@ export default function Ciencia({ data }) {
                 <div
                   className="response"
                   id="mce-error-response"
-                  style={{ display: "none" }}
+                  style={{display: "none"}}
                 ></div>
                 <div
                   className="response"
                   id="mce-success-response"
-                  style={{ display: "none" }}
+                  style={{display: "none"}}
                 ></div>
               </div>
               <div
@@ -167,5 +167,5 @@ export default function Ciencia({ data }) {
         </div>
       </section>
     </DefaultLayout>
-  )
+  );
 }

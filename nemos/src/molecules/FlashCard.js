@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Helm } from "../icons"
+import React, {useState} from "react";
+import {Helm} from "../icons";
 
 const FlashCardSide = ({
   className,
@@ -30,7 +30,7 @@ const FlashCardSide = ({
     >
       <div
         className="h-full w-full border border-nord-10 rounded-xl grid"
-        style={{ gridTemplateRows: "max-content max-content 1fr max-content" }}
+        style={{gridTemplateRows: "max-content max-content 1fr max-content"}}
       >
         <div className="row-start-1 pt-1 flex justify-between items-baseline">
           <span className="text-xs ml-3 mt-1 text-left font-light font-family-primary tracking-tighter">
@@ -117,8 +117,8 @@ const FlashCardSide = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const FlashCard = ({
   className,
@@ -129,20 +129,20 @@ const FlashCard = ({
   good,
   progress,
 }) => {
-  const [isFlipped, setIsFlipped] = useState(false)
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const postTryAgain = () => {
     if (tryAgain) {
-      setIsFlipped(false)
-      tryAgain()
+      setIsFlipped(false);
+      tryAgain();
     }
-  }
+  };
   const postGood = () => {
     if (good) {
-      setIsFlipped(false)
-      good()
+      setIsFlipped(false);
+      good();
     }
-  }
+  };
   return (
     <div className={`${className ? className : ""}`}>
       <FlashCardSide
@@ -159,21 +159,21 @@ const FlashCard = ({
         answer={answer}
         sectionTitle={sectionTitle}
         tryAgain={() => {
-          setIsFlipped(false)
-          postTryAgain()
+          setIsFlipped(false);
+          postTryAgain();
         }}
         good={() => {
-          postGood()
+          postGood();
         }}
         className={`${
           isFlipped ? "block cursor-default" : "hidden"
         } font-semibold`}
       />
     </div>
-  )
-}
+  );
+};
 
-const FlashCardSetCompleteFlashCard = ({ className, children }) => {
+const FlashCardSetCompleteFlashCard = ({className, children}) => {
   return (
     <div className={`${className ? className : ""}`}>
       <FlashCardSide
@@ -182,8 +182,8 @@ const FlashCardSetCompleteFlashCard = ({ className, children }) => {
         className="block cursor-none"
       ></FlashCardSide>
     </div>
-  )
-}
+  );
+};
 
-export default FlashCard
-export { FlashCardSetCompleteFlashCard }
+export default FlashCard;
+export {FlashCardSetCompleteFlashCard};

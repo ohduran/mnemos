@@ -1,7 +1,7 @@
-import React from "react"
-import { TeaserText } from "../molecules"
+import React from "react";
+import {TeaserText} from "../molecules";
 
-const Teaser = ({ title, children, IconComponent, isOdd }) => {
+const Teaser = ({title, children, IconComponent, isOdd}) => {
   return (
     <section
       className={`flex flex-col items-center justify-center min-h-screen ${
@@ -17,7 +17,7 @@ const Teaser = ({ title, children, IconComponent, isOdd }) => {
         <IconComponent className="mt-5 md:mt-0 h-64 md:h-80 mx-auto" />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Teaser
+export default Teaser;

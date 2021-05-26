@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const RocketBoy = ({ className }) => {
+const RocketBoy = ({className}) => {
   return (
     <svg
       className={className ? className : ""}
@@ -148,7 +148,7 @@ const RocketBoy = ({ className }) => {
         fill="#f9ab2f"
       ></path>
     </svg>
-  )
-}
+  );
+};
 
-export default RocketBoy
+export default RocketBoy;

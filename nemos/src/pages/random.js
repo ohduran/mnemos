@@ -1,8 +1,8 @@
-import React from "react"
-import { DefaultLayout } from "../layouts"
-import { gql } from "graphql-tag"
-import { useQuery } from "@apollo/client"
-import { FlashCardSet } from "../organisms"
+import React from "react";
+import {DefaultLayout} from "../layouts";
+import {gql} from "graphql-tag";
+import {useQuery} from "@apollo/client";
+import {FlashCardSet} from "../organisms";
 
 const RANDOM_QUERY = gql`
   query {
@@ -12,10 +12,10 @@ const RANDOM_QUERY = gql`
       answer
     }
   }
-`
+`;
 
 const Random = () => {
-  const { loading, error, data } = useQuery(RANDOM_QUERY)
+  const {loading, error, data} = useQuery(RANDOM_QUERY);
   return (
     <DefaultLayout>
       {loading && <p>Loading</p>}
@@ -40,7 +40,7 @@ const Random = () => {
         />
       )}
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default Random
+export default Random;

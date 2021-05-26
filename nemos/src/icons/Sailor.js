@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Sailor = ({ className, primaryColor }) => {
+const Sailor = ({className, primaryColor}) => {
   return (
     <svg
       id="Layer_1"
@@ -140,14 +140,14 @@ const Sailor = ({ className, primaryColor }) => {
         transform="translate(-77.93 -1.11)"
         fill={primaryColor}
         opacity="0.25"
-        style={{ isolation: "isolate" }}
+        style={{isolation: "isolate"}}
       ></path>
       <path
         d="M367,222.27c-9.52,38.65-23.79,79.89-54.36,104a94.09,94.09,0,0,1-11.4,7.71c-16.56,9.49-35.74,13.48-54.77,15-37.13,3-75.92-3.28-107.73-22.32q-5.27-3.15-10.26-6.77A126.24,126.24,0,0,1,86.6,267.34c-.74-13,3.38-22.74,9.67-34.31,13.17-24.2,32.33-46.43,58.55-56.66,22.55-8.8,48.8-8.26,68.89-21.77,18.28-12.28,29-34.71,49.18-43.45,15.4-6.67,33.05-3.9,49.58-1l42.9,7.48a131.17,131.17,0,0,1,8.85,30.12C378.11,172.57,373,197.87,367,222.27Z"
         transform="translate(-77.93 -1.11)"
         fill={primaryColor}
         opacity="0.25"
-        style={{ isolation: "isolate" }}
+        style={{isolation: "isolate"}}
       ></path>
       <path
         d="M200.21,168.44s-4.38,13.77-5.53,34.37c-2.4,42.88-2.51,111.45-2,119.72.79,12.25.79,19,.79,19l16.2-1.18L224.31,217l19,122.87,15.81-.39s-1.19-132.76-2.37-138.68-2.37-34.77-2.37-34.77Z"
@@ -390,7 +390,7 @@ const Sailor = ({ className, primaryColor }) => {
         fill="url(#linear-gradient-14)"
       ></path>
     </svg>
-  )
-}
+  );
+};
 
-export default Sailor
+export default Sailor;

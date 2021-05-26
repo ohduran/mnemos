@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const InformationCarousel = ({ className }) => {
+const InformationCarousel = ({className}) => {
   return (
     <svg
       className={className ? className : ""}
@@ -178,7 +178,7 @@ const InformationCarousel = ({ className }) => {
         ></path>
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default InformationCarousel
+export default InformationCarousel;

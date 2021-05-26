@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Brain = ({ className }) => {
+const Brain = ({className}) => {
   return (
     <svg
       className={className ? className : ""}
@@ -11,7 +11,7 @@ const Brain = ({ className }) => {
       x="0"
       y="0"
       viewBox="0 0 511.927 511.927"
-      style={{ enableBackground: "new 0 0 512 512" }}
+      style={{enableBackground: "new 0 0 512 512"}}
     >
       <g>
         <g xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@ const Brain = ({ className }) => {
         </g>
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default Brain
+export default Brain;

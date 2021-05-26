@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import { Helm } from "../icons"
-import { Seo } from "../molecules"
-import { FlashCardSet } from "../organisms"
+import React from "react";
+import {Link} from "gatsby";
+import {Helm} from "../icons";
+import {Seo} from "../molecules";
+import {FlashCardSet} from "../organisms";
 
 export default function NotFound() {
   return (
@@ -63,5 +63,5 @@ export default function NotFound() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

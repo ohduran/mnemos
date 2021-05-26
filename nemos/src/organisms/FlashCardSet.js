@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import { FlashCard, FlashCardSetCompleteFlashCard } from "../molecules"
+import React, {useState} from "react";
+import {FlashCard, FlashCardSetCompleteFlashCard} from "../molecules";
 
-const FlashCardSet = ({ questions, className, completeSetMessage }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [listOfQuestions, setListOfQuestions] = useState(questions)
+const FlashCardSet = ({questions, className, completeSetMessage}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [listOfQuestions, setListOfQuestions] = useState(questions);
 
   const handleNextCard = () => {
     if (currentIndex + 1 < listOfQuestions.length) {
-      return setCurrentIndex(currentIndex + 1)
+      return setCurrentIndex(currentIndex + 1);
     } else {
-      return setCurrentIndex(0)
+      return setCurrentIndex(0);
     }
-  }
+  };
 
   function handleRemoveCard() {
     if (currentIndex >= listOfQuestions.length - 1) {
-      setCurrentIndex(0)
+      setCurrentIndex(0);
     }
     const newListOfQuestions = listOfQuestions.filter(
-      item => listOfQuestions.indexOf(item) !== currentIndex
-    )
-    setListOfQuestions(newListOfQuestions)
-    setProgress(100 - (newListOfQuestions.length / questions.length) * 100)
+      (item) => listOfQuestions.indexOf(item) !== currentIndex
+    );
+    setListOfQuestions(newListOfQuestions);
+    setProgress(100 - (newListOfQuestions.length / questions.length) * 100);
   }
 
   return (
@@ -37,10 +37,10 @@ const FlashCardSet = ({ questions, className, completeSetMessage }) => {
             sectionTitle={question.sectionTitle}
             progress={progress}
             tryAgain={() => {
-              handleNextCard()
+              handleNextCard();
             }}
             good={() => {
-              handleRemoveCard(index)
+              handleRemoveCard(index);
             }}
           />
         ))
@@ -50,7 +50,7 @@ const FlashCardSet = ({ questions, className, completeSetMessage }) => {
         </FlashCardSetCompleteFlashCard>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default FlashCardSet
+export default FlashCardSet;
