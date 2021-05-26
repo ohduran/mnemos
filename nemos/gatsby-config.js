@@ -6,7 +6,7 @@
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -56,4 +56,4 @@ module.exports = {
     },
     `gatsby-plugin-offline`, // this plugin should be listed after gatsby-plugin-manifest so the manifest file can be included in the service worker.
   ],
-}
+};

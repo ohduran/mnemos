@@ -1,9 +1,9 @@
-import React from "react"
-import { Helm } from "../icons"
+import React from "react";
+import {Helm} from "../icons";
 
-import * as quoteStyles from "../styles/quote.module.css"
+import * as quoteStyles from "../styles/quote.module.css";
 
-const Testimonial = ({ children, author, authorImageSrc, className }) => {
+const Testimonial = ({children, author, authorImageSrc, className}) => {
   return (
     <div
       className={`${
@@ -16,7 +16,7 @@ const Testimonial = ({ children, author, authorImageSrc, className }) => {
     >
       <div
         className="h-full w-full border border-nord-10 rounded-xl grid col-start-1"
-        style={{ gridTemplateRows: "max-content 1fr max-content" }}
+        style={{gridTemplateRows: "max-content 1fr max-content"}}
       >
         <div className="row-start-1 pt-1 flex justify-end items-baseline">
           <div className="flex items-center">
@@ -44,7 +44,7 @@ const Testimonial = ({ children, author, authorImageSrc, className }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;

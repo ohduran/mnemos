@@ -1,11 +1,11 @@
-import React from "react"
-import { useAuth0 } from "@auth0/auth0-react"
-import { Link } from "gatsby"
-import { Helm } from "../icons"
-import { LoginButton, LogoutButton } from "../molecules"
+import React from "react";
+import {useAuth0} from "@auth0/auth0-react";
+import {Link} from "gatsby";
+import {Helm} from "../icons";
+import {LoginButton, LogoutButton} from "../molecules";
 
-const NavBar = ({ className }) => {
-  const { user, isAuthenticated, isLoading } = useAuth0()
+const NavBar = ({className}) => {
+  const {user, isAuthenticated, isLoading} = useAuth0();
   return (
     <nav
       className={`${
@@ -46,7 +46,7 @@ const NavBar = ({ className }) => {
         )}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

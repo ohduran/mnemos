@@ -1,7 +1,7 @@
-import React from "react"
-import { Auth0Provider } from "@auth0/auth0-react"
+import React from "react";
+import {Auth0Provider} from "@auth0/auth0-react";
 
-export const wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({element}) => {
   return (
     <Auth0Provider
       domain={process.env.AUTH0_DOMAIN}
@@ -16,5 +16,5 @@ export const wrapRootElement = ({ element }) => {
     >
       {element}
     </Auth0Provider>
-  )
-}
+  );
+};

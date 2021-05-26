@@ -1,5 +1,5 @@
-import React from "react"
-import * as boatAnimatedStyles from "../styles/boatanimated.module.css"
+import React from "react";
+import * as boatAnimatedStyles from "../styles/boatanimated.module.css";
 
 const BoatAnimated = () => {
   return (
@@ -84,7 +84,7 @@ const BoatAnimated = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BoatAnimated
+export default BoatAnimated;

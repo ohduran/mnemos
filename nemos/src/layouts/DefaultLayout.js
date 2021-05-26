@@ -1,8 +1,8 @@
-import React from "react"
-import { Seo } from "../molecules"
-import { Footer, NavBar } from "../organisms"
+import React from "react";
+import {Seo} from "../molecules";
+import {Footer, NavBar} from "../organisms";
 
-const DefaultLayout = ({ children, className }) => {
+const DefaultLayout = ({children, className}) => {
   return (
     <div
       className={`min-h-screen min-w-screen grid grid-cols-3`}
@@ -25,7 +25,7 @@ const DefaultLayout = ({ children, className }) => {
       </main>
       <Footer className="col-start-1 col-span-3 row-start-3" />
     </div>
-  )
-}
+  );
+};
 
-export default DefaultLayout
+export default DefaultLayout;

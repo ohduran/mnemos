@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Thinking = ({ className }) => {
+const Thinking = ({className}) => {
   return (
     <svg
       id="Layer_2"
@@ -554,7 +554,7 @@ const Thinking = ({ className }) => {
         opacity="0.44"
       ></polygon>
     </svg>
-  )
-}
+  );
+};
 
-export default Thinking
+export default Thinking;

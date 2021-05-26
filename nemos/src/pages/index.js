@@ -1,15 +1,15 @@
-import React from "react"
-import { Helm, Sailor } from "../icons"
-import { FlashCardSet } from "../organisms"
-import { DefaultLayout } from "../layouts"
-import { StaticImage } from "gatsby-plugin-image"
-import { graphql, Link } from "gatsby"
-import * as howItWorksStyles from "../styles/how-it-works.module.css"
+import React from "react";
+import {Helm, Sailor} from "../icons";
+import {FlashCardSet} from "../organisms";
+import {DefaultLayout} from "../layouts";
+import {StaticImage} from "gatsby-plugin-image";
+import {graphql, Link} from "gatsby";
+import * as howItWorksStyles from "../styles/how-it-works.module.css";
 
-import HeroImage from "../../static/marc-wieland-YFFPD62BXQY-unsplash.jpg"
-import { Testimonial } from "../molecules"
+import HeroImage from "../../static/marc-wieland-YFFPD62BXQY-unsplash.jpg";
+import {Testimonial} from "../molecules";
 
-export default function Home({ data }) {
+export default function Home({data}) {
   return (
     <DefaultLayout>
       <section
@@ -69,12 +69,12 @@ export default function Home({ data }) {
                   <div
                     className="response"
                     id="mce-error-response"
-                    style={{ display: "none" }}
+                    style={{display: "none"}}
                   ></div>
                   <div
                     className="response"
                     id="mce-success-response"
-                    style={{ display: "none" }}
+                    style={{display: "none"}}
                   ></div>
                 </div>
                 <div
@@ -664,12 +664,12 @@ export default function Home({ data }) {
                 <div
                   className="response"
                   id="mce-error-response"
-                  style={{ display: "none" }}
+                  style={{display: "none"}}
                 ></div>
                 <div
                   className="response"
                   id="mce-success-response"
-                  style={{ display: "none" }}
+                  style={{display: "none"}}
                 ></div>
               </div>
               <div
@@ -700,12 +700,12 @@ export default function Home({ data }) {
         </div>
       </section>
     </DefaultLayout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
   {
-    allMdx(filter: { slug: { eq: "how-it-works" } }) {
+    allMdx(filter: {slug: {eq: "how-it-works"}}) {
       edges {
         node {
           body
@@ -713,4 +713,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

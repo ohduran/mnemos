@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const DayDreaming = ({ className }) => {
+const DayDreaming = ({className}) => {
   return (
     <svg
       className={className ? className : ""}
@@ -266,7 +266,7 @@ const DayDreaming = ({ className }) => {
         fill="#835e41"
       ></path>
     </svg>
-  )
-}
+  );
+};
 
-export default DayDreaming
+export default DayDreaming;

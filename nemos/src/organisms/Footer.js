@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Footer = ({ className }) => {
+const Footer = ({className}) => {
   return (
     <footer className={`${className ? className : ""}`}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -85,6 +85,6 @@ const Footer = ({ className }) => {
         </a>
       </div>
     </footer>
-  )
-}
-export default Footer
+  );
+};
+export default Footer;

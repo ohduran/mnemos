@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Helm = ({ className }) => {
+const Helm = ({className}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ const Helm = ({ className }) => {
         </g>
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default Helm
+export default Helm;

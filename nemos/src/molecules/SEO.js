@@ -1,11 +1,11 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import {Helmet} from "react-helmet";
+import {useLocation} from "@reach/router";
+import {useStaticQuery, graphql} from "gatsby";
 
-const Seo = ({ title, description, image, article }) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+const Seo = ({title, description, image, article}) => {
+  const {pathname} = useLocation();
+  const {site} = useStaticQuery(query);
 
   const {
     defaultTitle,
@@ -13,14 +13,14 @@ const Seo = ({ title, description, image, article }) => {
     defaultDescription,
     siteUrl,
     defaultImage,
-  } = site.siteMetadata
+  } = site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  }
+  };
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -49,10 +49,10 @@ const Seo = ({ title, description, image, article }) => {
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
-  )
-}
+  );
+};
 
-export default Seo
+export default Seo;
 
 const query = graphql`
   query Seo {
@@ -66,4 +66,4 @@ const query = graphql`
       }
     }
   }
-`
+`;
