@@ -3,7 +3,7 @@ version: "3.8"
 services:
   nemos:
     build: ./nemos
-    command: gatsby develop -H 0.0.0.0 -p 9000
+    command: gatsby develop -H 0.0.0.0 -p 9000 --verbose
     ports:
       - "9000:9000"
     volumes:
