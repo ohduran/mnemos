@@ -11,11 +11,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest",
-    "prepare": "husky install",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "test": "jest"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -40,7 +36,6 @@
     "gatsby-source-filesystem": "3.4.0",
     "gatsby-transformer-sharp": "3.4.0",
     "graphql": "^15.5.0",
-    "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^26.6.3",
