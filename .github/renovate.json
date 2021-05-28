@@ -2,7 +2,7 @@
   "extends": [
     "config:base"
   ],
-  "baseBranches": ["development", "master"],
+  "baseBranches": ["development"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
