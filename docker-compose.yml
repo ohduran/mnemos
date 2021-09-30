@@ -12,7 +12,7 @@ services:
     env_file:
       - ./nemos/.env.development
   db:
-    image: postgres:13
+    image: postgres:14
     environment:
       - POSTGRES_USER=mnemos
       - POSTGRES_PASSWORD=mnemos
